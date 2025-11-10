@@ -1,0 +1,81 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const heroVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, staggerChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Hero() {
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
+          alt="Stylish hardwood flooring interior"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <motion.div
+          className="mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={heroVariants}
+        >
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg"
+            variants={itemVariants}
+          >
+            Transform Your Space from the Ground Up.
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md"
+            variants={itemVariants}
+          >
+            Premium craftsmanship meets timeless style. Discover our collection of hardwood, vinyl, laminate, and marble flooring solutions.
+          </motion.p>
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <Link
+            href="#contact"
+            className="bg-gold text-brown px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Get a Free Quote
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      >
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </motion.div>
+    </section>
+  );
+}
