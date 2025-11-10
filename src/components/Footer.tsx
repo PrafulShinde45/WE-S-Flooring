@@ -47,8 +47,7 @@ export default function Footer() {
           variants={footerVariants}
         >
           <div className="flex items-center justify-center mb-4">
-            <Image src="/logo.png" alt="We's Flooring Logo" width={50} height={50} className="mr-4" />
-            <h3 className="text-3xl font-bold text-gold font-inter">We's Flooring</h3>
+            <Image src="/logo.png" alt="We's Flooring Logo" width={80} height={80} className="mx-auto" />
           </div>
           <p className="text-beige text-lg italic max-w-2xl mx-auto">
             Grounded in Quality. Designed for Life.

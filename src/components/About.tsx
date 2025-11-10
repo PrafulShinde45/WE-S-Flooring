@@ -45,13 +45,13 @@ export default function About({ isFullPage = false }: { isFullPage?: boolean }) 
 
           <motion.div variants={itemVariants} className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-brown">
-              Crafting Excellence Since 1995
+              About Us
             </h2>
             <blockquote className="text-xl italic text-gold font-medium border-l-4 border-gold pl-4 my-6">
               "Where every step tells a story of quality and craftsmanship."
             </blockquote>
             <p className="text-lg text-gray-700 leading-relaxed">
-              With over two decades of experience in the flooring industry, we have built our reputation on premium craftsmanship, attention to detail, and unwavering commitment to customer satisfaction. Our team of skilled artisans and designers work tirelessly to bring your vision to life, whether it's a cozy home renovation or a sophisticated commercial space.
+              We began our journey in the year 2020, with an aim of becoming a successful Business, later the running wheel of time taught us to aim higher. Now We aspire to become a leader in the coating industry then spread Across different locations across India. Located in PUNE, since Its inception WE S FLOORING PVT LTD of the company Has been providing matchless service to its clients While adhering strictly to the quality and the delivery timelines WE S FLOORING PVT LTD has become the synonym For bestFlooring solution Provider in the Vicinity of PUNE.
             </p>
             {isFullPage && (
               <div className="space-y-4">
@@ -83,7 +83,7 @@ export default function About({ isFullPage = false }: { isFullPage?: boolean }) 
             whileTap={{ scale: 0.95 }}
           >
             <Calendar className="w-5 h-5 text-gold" />
-            <span className="text-brown font-semibold">25+ Years Experience</span>
+            <span className="text-brown font-semibold">Since 2020</span>
           </motion.div>
           <motion.div
             className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer"
@@ -91,7 +91,7 @@ export default function About({ isFullPage = false }: { isFullPage?: boolean }) 
             whileTap={{ scale: 0.95 }}
           >
             <CheckCircle className="w-5 h-5 text-gold" />
-            <span className="text-brown font-semibold">1000+ Projects Completed</span>
+            <span className="text-brown font-semibold">Multiple Projects Completed</span>
           </motion.div>
           <motion.div
             className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer"

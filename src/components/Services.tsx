@@ -110,6 +110,21 @@ export default function Services() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <a
+            href="/products-services"
+            className="inline-block bg-gold text-brown px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gold/90 transition-colors shadow-lg hover:shadow-xl"
+          >
+            View All Products
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -123,7 +123,7 @@ export default function AboutPage() {
         </div>
       </section>
       
-      {/* Our Story 
+      {/* Vision & Mission */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -133,43 +133,57 @@ export default function AboutPage() {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-brown mb-6">Our Story</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-brown mb-6">Our Vision & Mission</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              From humble beginnings to industry leaders, our journey is one of passion, precision, and unwavering commitment to excellence.
+              Driving excellence in the flooring industry with innovation, quality, and customer-centric solutions.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid md:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2 gap-12"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp}>
-              <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1503387837-b154d5074bd2?w=600&h=400&fit=crop"
-                  alt="Our workshop"
-                  fill
-                  className="object-cover"
-                />
+            <motion.div variants={fadeInUp} className="space-y-6">
+              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-brown mb-4">Our Vision</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  To become a leader in the coating industry and expand across different locations in India. We aspire to be a world-class service provider, continuously pushing boundaries and setting new standards of excellence in flooring solutions.
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  Founded in 2020, our journey began with a commitment to success. Today, we believe even the sky is not the limit for achievers, and we're determined to reach new heights in our industry.
+                </p>
               </div>
             </motion.div>
+
             <motion.div variants={fadeInUp} className="space-y-6">
-              <h3 className="text-3xl font-semibold text-brown">Founded in 1995</h3>
-              <p className="text-gray-700 leading-relaxed">
-                What began as a small family workshop has evolved into a premier flooring destination. Our founders, master craftsmen with decades of experience, envisioned a company that would redefine quality in the flooring industry.
-              </p>
-              <h3 className="text-3xl font-semibold text-brown">Legacy of Excellence</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Today, we continue that legacy by combining traditional craftsmanship with cutting-edge techniques, ensuring every installation meets our uncompromising standards.
-              </p>
+              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-brown mb-4">Our Mission</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  To provide matchless service to our clients while adhering strictly to quality standards and delivery timelines. We are committed to becoming the synonym for the best flooring solution provider in Pune and beyond.
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  Our endless potential and continuous efforts in meeting client requirements with best-in-line products drive our success. We render cost-effective after-sales and consultancy services to ensure all client queries are addressed timely.
+                </p>
+
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
-
-      {/* Why Choose Us 
+      {/* Why Choose Us*/} 
       <section className="py-20 bg-gradient-to-br from-beige via-amber-50 to-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -194,7 +208,7 @@ export default function AboutPage() {
           >
             {[
               { icon: Award, title: 'Premium Quality', desc: 'Only the finest materials and craftsmanship' },
-              { icon: Shield, title: 'Lifetime Warranty', desc: 'Comprehensive protection for your investment' },
+              { icon: Wrench, title: 'Custom Solutions', desc: 'Tailored flooring solutions for every space' },
               { icon: Users, title: 'Expert Team', desc: 'Certified professionals with 25+ years experience' },
               { icon: Heart, title: 'Customer First', desc: 'Your satisfaction is our ultimate goal' },
             ].map((item, index) => (
@@ -213,7 +227,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Expertise 
+      {/* Our Expertise */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -264,54 +278,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Client Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-brown mb-6">Our Clients Says</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Real experiences from satisfied customers who trust us with their most important spaces.
-            </p>
-          </motion.div>
+     
 
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {[
-              { quote: "We S Flooring did a great job. They were very neat and kept to the time schedule. They were available to answer all of my questions. The finished floor looks beautiful! I would highly recommend We S flooring Pvt Ltd.", name: "Mr. Ashish Dighe", project: "Director, Sunteck, Pune", initials: "AD" },
-              { quote: "My experience with We S flooring was exactly as I expected as they were very professional and efficient applicators. The floor looks exactly as promised and I would 100% recommend them and share their names.", name: "Mr. Padmanabh Kulkarni", project: "Chemsol Polymers", initials: "PK" },
-              { quote: "We S flooring Pvt Ltd. worked as professionals, with expertise, and with good safety. We worked together and complete around 50000 sqft areas of epoxy flooring in Pune Projects. Our client and we are 100% satisfied with their service and method of execution.", name: "Vijay Navgire", project: "Director, TFI services LLP", initials: "VN" },
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-beige p-6 rounded-xl shadow-lg"
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center text-brown font-bold text-lg mb-4">
-                  {testimonial.initials}
-                </div>
-                <Star className="w-8 h-8 text-gold mb-4" />
-                <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-semibold text-brown">{testimonial.name}</p>
-                  <p className="text-gold text-sm">{testimonial.project}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> 
+      {/* Client Testimonials */}
+      
 
       <Footer/>
     </div>
