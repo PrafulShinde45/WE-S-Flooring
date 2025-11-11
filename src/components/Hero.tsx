@@ -18,14 +18,30 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function Hero() {
+interface HeroProps {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  backgroundImage?: string;
+  height?: string;
+}
+
+export default function Hero({
+  title = "Transform Your Space from the Ground Up.",
+  subtitle = "Premium craftsmanship meets timeless style. Discover our collection of hardwood, vinyl, laminate, and marble flooring solutions.",
+  buttonText = "Get a Free Quote",
+  buttonHref = "#contact",
+  backgroundImage = "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
+  height = "min-h-screen",
+}: HeroProps) {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className={`relative ${height} flex items-center justify-center overflow-hidden`}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
-          alt="Stylish hardwood flooring interior"
+          src={backgroundImage}
+          alt="Hero background"
           fill
           className="object-cover"
           priority
@@ -46,22 +62,22 @@ export default function Hero() {
             className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg"
             variants={itemVariants}
           >
-            Transform Your Space from the Ground Up.
+            {title}
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-md"
             variants={itemVariants}
           >
-            Premium craftsmanship meets timeless style. Discover our collection of hardwood, vinyl, laminate, and marble flooring solutions.
+            {subtitle}
           </motion.p>
         </motion.div>
 
         <motion.div variants={itemVariants}>
           <Link
-            href="#contact"
+            href={buttonHref}
             className="bg-gold text-brown px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            Get a Free Quote
+            {buttonText}
           </Link>
         </motion.div>
       </div>

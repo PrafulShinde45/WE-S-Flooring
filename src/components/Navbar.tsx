@@ -121,28 +121,28 @@ export default function Navbar() {
             >
               About
             </Link>
-            <div
-              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium cursor-pointer ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
+            <Link
+              href="/products-services"
+              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
                 }`}
-              onClick={(e) => e.preventDefault()}
             >
               Products & Services
-            </div>
-            <div
-              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium cursor-pointer ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
+            </Link>
+            <Link
+              href="/projects"
+              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
                 }`}
-              onClick={(e) => e.preventDefault()}
             >
-              Projects
-            </div>
+              Gallery
+            </Link>
 
-            <div
-              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium cursor-pointer ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
+            <Link
+              href="/contact"
+              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
                 }`}
-              onClick={(e) => e.preventDefault()}
             >
               Contact
-            </div>
+            </Link>
           </div>
 
           {/* Search Bar */}
@@ -255,36 +255,41 @@ export default function Navbar() {
               >
                 About
               </Link>
-              <div
-                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                onClick={(e) => e.preventDefault()}
+              <Link
+                href="/products-services"
+                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
               >
                 Products & Services
-              </div>
-              <div
-                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                onClick={(e) => e.preventDefault()}
+              </Link>
+              <Link
+                href="/projects"
+                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
               >
-                Projects
-              </div>
-              <div
-                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                onClick={(e) => e.preventDefault()}
+                Gallery
+              </Link>
+              <Link
+                href="#reviews"
+                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
               >
                 Reviews
-              </div>
-              <div
-                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium cursor-pointer"
-                onClick={(e) => e.preventDefault()}
+              </Link>
+              <Link
+                href="/contact"
+                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
               >
                 Contact
-              </div>
-              <div
-                className="bg-gold text-brown block px-3 py-2 rounded-md text-base font-medium hover:bg-gold/90 cursor-pointer"
-                onClick={(e) => e.preventDefault()}
+              </Link>
+              <a
+                href="tel:+1555123FLOOR"
+                className="bg-gold text-brown block px-3 py-2 rounded-md text-base font-medium hover:bg-gold/90"
+                onClick={toggleMenu}
               >
                 Call Now
-              </div>
+              </a>
             </div>
           </div>
         )}

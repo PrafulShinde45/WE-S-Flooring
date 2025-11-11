@@ -1,11 +1,13 @@
 'use client';
 
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowDown, X } from 'lucide-react';
+import Gallery from '@/components/Gallery';
+import Hero from '@/components/Hero';
+import { X } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -92,54 +94,16 @@ const modalVariants = {
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Parallax for hero
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1], [0, -50]);
+
 
   return (
     <>
       <Navbar />
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-        <motion.div
-          className="absolute inset-0"
-          style={{ y }}
-        >
-          <Image
-            src="/wall coating_edited.avif"
-            alt="Projects hero background"
-            fill
-            className="object-cover opacity-40"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 text-center text-white px-4">
-          <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Our Completed Projects
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            Delivering excellence, one floor at a time.
-          </motion.p>
-          <motion.div
-            className="animate-bounce"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6, repeat: Infinity, repeatType: 'reverse' }}
-          >
-            <ArrowDown className="w-8 h-8 mx-auto text-gold" />
-          </motion.div>
-        </div>
-      </section>
+      <Hero
+        title="Our Completed Projects"
+        subtitle="Delivering excellence, one floor at a time."
+        backgroundImage="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
+      />
 
       {/* Projects Grid */}
       <section className="py-20 bg-white">
@@ -238,6 +202,7 @@ export default function Projects() {
         )}
       </AnimatePresence>
 
+      <Gallery />
       <Footer />
     </>
   );
