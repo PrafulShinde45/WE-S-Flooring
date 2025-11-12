@@ -28,7 +28,8 @@ export default function IndustriesPage() {
       <Hero
         title="Industries We Serve"
         subtitle="Specialized flooring solutions across diverse sectors"
-        height="h-96"
+        height="h-[70vh]"
+        backgroundImage="/hero industries.jpg"
       />
       <Industries />
 
@@ -36,7 +37,7 @@ export default function IndustriesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-brown mb-6">Completed Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Completed Projects</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               A showcase of our successful flooring installations across various industries and locations.
             </p>
@@ -44,7 +45,7 @@ export default function IndustriesPage() {
 
           <div className="overflow-x-auto">
             <table className="w-full bg-white shadow-lg rounded-lg overflow-hidden">
-              <thead className="bg-brown text-white">
+              <thead className="bg-[#e13403] text-white">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold">Customer</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold">Type of Flooring</th>

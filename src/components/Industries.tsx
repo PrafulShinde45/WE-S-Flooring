@@ -52,9 +52,9 @@ export default function Industries() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-brown mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
             Industries We
-            <span className="block text-gold">Cover</span>
+            <span className="block text-[#e13403]">Cover</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Delivering specialized flooring solutions across diverse industries with precision and expertise
@@ -84,7 +84,7 @@ export default function Industries() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-brown mb-2 group-hover:text-gold transition-colors">
+              <h3 className="text-xl font-bold text-brown mb-2 group-hover:text-black transition-colors">
                 {industry.name}
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -92,7 +92,7 @@ export default function Industries() {
               </p>
 
               {/* Animated Border */}
-              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gold group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#e13403] group-hover:w-full transition-all duration-500"></div>
             </motion.div>
           ))}
         </motion.div>
@@ -110,9 +110,9 @@ export default function Industries() {
           </p>
           <motion.a
             href="/contact"
-            className="inline-block bg-brown text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brown/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="inline-block bg-[#e13403] text-white px-6 py-3 rounded-lg text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             Get Custom Solution
           </motion.a>

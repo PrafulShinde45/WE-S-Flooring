@@ -51,7 +51,7 @@ const projects: Project[] = [
     title: 'PIPL - Infosys Ltd',
     location: 'Hinjewadi Pune',
     description: '500-micron PU Roller Coating applied to staircases and frequent movement areas (15 floors × 4 staircases).',
-    image: '/staircase PU.avif',
+    image: '/staircasePU.avif',
   },
   {
     id: 6,
@@ -102,8 +102,8 @@ export default function Projects() {
       <Hero
         title="Our Completed Projects"
         subtitle="Delivering excellence, one floor at a time."
-        backgroundImage="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
-        height="h-96"
+        backgroundImage="/IMG-20251111-WA0058[1].jpg"
+        height="h-[70vh]"
       />
 
       {/* Projects Grid */}
@@ -146,13 +146,13 @@ export default function Projects() {
                     whileHover={{ opacity: 1 }}
                   >
                     <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                    <p className="text-gold mb-2 text-sm">{project.location}</p>
+                    <p className="text-[#e13403] mb-2 text-sm">{project.location}</p>
                     <p className="text-sm leading-relaxed">{project.description}</p>
                   </motion.div>
                 </div>
                 <div className="mt-4 px-2">
                   <h3 className="text-lg font-semibold text-black mb-1">{project.title}</h3>
-                  <p className="text-gold text-sm">{project.location}</p>
+                  <p className="text-[#e13403] text-sm">{project.location}</p>
                 </div>
               </motion.div>
             ))}

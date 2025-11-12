@@ -19,6 +19,7 @@ import {
   Award,
   ArrowRight,
   Phone,
+  X,
 } from 'lucide-react';
 
 // Hero parallax effect
@@ -27,61 +28,116 @@ const useParallax = (value: number) => {
   return useTransform(scrollY, [0, 1], [0, -value]);
 };
 
+interface Service {
+  title: string;
+  description: string;
+  icon: any;
+  image: string;
+}
+
 // Service data
-const services = [
+const services: Service[] = [
   {
-    title: 'PU Concrete',
-    description: 'Durable polyurethane concrete for high-traffic industrial areas.',
-    icon: Shield,
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
-  },
-  {
-    title: 'Floor Repair',
-    description: 'Expert repair services to restore and strengthen flooring.',
-    icon: Hammer,
-    image: 'https://images.unsplash.com/photo-1600585153490-15d2c40b9e93?w=400&h=300&fit=crop',
-  },
-  {
-    title: 'Anti Static Flooring (ESD)',
-    description: 'Electrostatic discharge protection for sensitive environments.',
-    icon: Zap,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop',
-  },
-  {
-    title: 'EPOXY Self Level Flooring',
-    description: 'Seamless, self-leveling epoxy for smooth, durable surfaces.',
+    title: 'Self-Leveling Epoxy Flooring System',
+    description: 'Seamless, self-leveling epoxy for smooth, durable surfaces in industrial and commercial spaces. Ideal for warehouses, factories, and showrooms.',
     icon: Droplets,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+    image: '/self-leveling-epoxy-flooring-system.avif',
   },
   {
-    title: 'Roller Coating Flooring',
-    description: 'High-quality roller-applied coatings for various applications.',
+    title: 'Decorative Flooring System',
+    description: 'Aesthetic and functional decorative flooring solutions for modern interiors. Custom designs for residential and commercial applications.',
     icon: Paintbrush,
-    image: 'https://images.unsplash.com/photo-1558618040-8e0c1a5e9b4a?w=400&h=300&fit=crop',
+    image: '/decorative-flooring-system.avif',
   },
   {
-    title: 'Chemical Resistant Coating',
-    description: 'Protective coatings resistant to harsh chemicals and spills.',
+    title: 'Epoxy Resurfacing / Floor Repair Service',
+    description: 'Expert epoxy resurfacing and repair to restore damaged flooring. Quick and efficient solutions for cracks, chips, and wear.',
+    icon: Hammer,
+    image: '/epoxy-resurfacing-floor-repair.avif',
+  },
+  {
+    title: 'PU Concrete Flooring',
+    description: 'Durable polyurethane concrete for high-traffic industrial areas. Provides excellent abrasion resistance and chemical protection.',
     icon: Shield,
-    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop',
+    image: '/pu-concrete-flooring.avif',
   },
   {
-    title: 'Densification / Concrete Polishing',
-    description: 'Enhance concrete with densification and polishing techniques.',
-    icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop',
+    title: 'Antistatic Flooring System',
+    description: 'Electrostatic discharge protection for sensitive environments. Essential for electronics manufacturing and data centers.',
+    icon: Zap,
+    image: '/antistatic-flooring-system.avif',
   },
   {
-    title: 'Wall Coating',
-    description: 'Protective and aesthetic wall coatings for industrial spaces.',
+    title: 'Line Marking / Safety Marker',
+    description: 'Precision line marking for safety and organization in facilities. Color-coded markings for aisles, zones, and hazards.',
+    icon: CheckCircle,
+    image: '/line-marking-safety-marker.avif',
+  },
+  {
+    title: 'Industrial & Commercial Wall Coating',
+    description: 'Protective and aesthetic wall coatings for industrial spaces. Resistant to impacts, chemicals, and easy to clean.',
     icon: Building,
-    image: 'https://images.unsplash.com/photo-1600585153490-15d2c40b9e93?w=400&h=300&fit=crop',
+    image: '/industrial-commercial-wall-coating.avif',
   },
   {
-    title: 'Car Parking / Automotive Coating',
-    description: 'Durable coatings for parking areas and automotive facilities.',
+    title: 'Sealant Application Services',
+    description: 'Professional sealant application for enhanced durability and protection. Seals joints and prevents water ingress.',
+    icon: Sparkles,
+    image: '/sealant-application-services.avif',
+  },
+  {
+    title: 'Waterproofing',
+    description: 'Advanced waterproofing solutions to protect floors from moisture and water damage. Ideal for wet areas and basements.',
+    icon: Droplets,
+    image: '/waterproofing.jpg',
+  },
+  {
+    title: 'Sinage Marking',
+    description: 'Custom signage and marking services for clear navigation and safety. Durable and compliant with industry standards.',
+    icon: CheckCircle,
+    image: '/sinage-marking.jpg',
+  },
+  {
+    title: 'PU Wallcoating',
+    description: 'High-performance polyurethane wall coatings for durability and aesthetics. Smooth finish with excellent adhesion.',
+    icon: Paintbrush,
+    image: '/pu-wallcoating.jpg',
+  },
+  {
+    title: 'PU Dust Proof Staircase Coating',
+    description: 'Dust-proof polyurethane coatings for staircases to ensure safety and cleanliness. Non-slip and easy maintenance.',
+    icon: Shield,
+    image: '/pu-dust-proof-staircase-coating.jpg',
+  },
+  {
+    title: 'PU Car Park Coating',
+    description: 'Robust polyurethane coatings for car parks to withstand heavy traffic. UV resistant and fast curing.',
     icon: Car,
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop',
+    image: '/pu-car-park-coating.jpg',
+  },
+  {
+    title: 'PU Waterproof Coating',
+    description: 'Waterproof polyurethane coatings for superior moisture resistance. Flexible and long-lasting protection.',
+    icon: Droplets,
+    image: '/pu-waterproof-coating.jpg',
+  },
+  {
+    title: 'Food Grade Epoxy Flooring',
+    description: 'Hygienic, food-safe epoxy flooring for kitchens and food processing areas. NSF certified and seamless.',
+    icon: Sparkles,
+    image: '/food-grade-epoxy-flooring.jpg',
+  },
+  {
+    title: 'Densification Polished Concrete',
+    description: 'Densified and polished concrete for a sleek, low-maintenance finish. Eco-friendly and cost-effective.',
+    icon: Hammer,
+    image: '/densification-polished-concrete.jpg',
+  },
+  {
+    title: 'Cementious Self leveling Underlay',
+    description: 'Cementitious self-leveling underlay for even, stable flooring preparation. Fast drying and high strength.',
+    icon: Droplets,
+    image: '/Cementious self leveling  underlay.jpg',
   },
 ];
 
@@ -94,33 +150,51 @@ const whyChooseUs = [
 
 const offerings = {
   Installations: [
-    'PU Concrete',
-    'EPOXY Self Level Flooring',
-    'Roller Coating Flooring',
-    'Chemical Resistant Coating',
-    'Anti Static Flooring (ESD)',
-    'Wall Coating',
-    'Car Parking / Automotive Coating',
+    'Self-Leveling Epoxy Flooring System',
+    'Decorative Flooring System',
+    'PU Concrete Flooring',
+    'Antistatic Flooring System',
+    'Line Marking / Safety Marker',
+    'Industrial & Commercial Wall Coating',
+    'Sealant Application Services',
+    'Waterproofing',
+    'Sinage Marking',
+    'PU Wallcoating',
+    'PU Dust Proof Staircase Coating',
+    'PU Car Park Coating',
+    'PU Waterproof Coating',
+    'Food Grade Epoxy Flooring',
+    'Densification Polished Concrete',
+    'Cementious Self leveling Underlay',
   ],
-  Repairs: ['Floor Repair'],
-  Maintenance: ['Densification / Concrete Polishing'],
+  Repairs: ['Epoxy Resurfacing / Floor Repair Service'],
+  Maintenance: ['Densification Polished Concrete'],
 };
 
 export default function ProductsServices() {
   const [activeTab, setActiveTab] = useState('Installations');
+  const [selectedProduct, setSelectedProduct] = useState<Service | null>(null);
   const y = useParallax(0.5);
+
+  const openModal = (product: Service) => {
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
     <>
       <Navbar />
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gray-900">
         <motion.div
           className="absolute inset-0 z-0"
           style={{ y }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
+            src="/sign-neon-light-illuminated-inside.jpg"
             alt="Flooring background"
             fill
             sizes="100vw"
@@ -185,14 +259,15 @@ export default function ProductsServices() {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-beige/50"
+                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-beige/50 cursor-pointer"
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
                 }}
                 whileHover={{ y: -10, scale: 1.05 }}
+                onClick={() => openModal(service)}
               >
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className="relative h-80 w-full overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -200,19 +275,11 @@ export default function ProductsServices() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brown/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <service.icon className="text-gold w-8 h-8" />
-                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-brown mb-2 group-hover:text-gold transition-colors flex items-center">
-                    <service.icon className="mr-2 w-5 h-5 text-gold" />
+                  <h3 className="text-xl font-semibold text-brown mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                  <button className="mt-4 text-gold hover:text-brown transition-colors font-medium flex items-center">
-                    Learn More <ArrowRight className="ml-1 w-4 h-4" />
-                  </button>
                 </div>
               </motion.div>
             ))}
@@ -220,9 +287,45 @@ export default function ProductsServices() {
         </div>
       </section>
 
-
-
-
+      {/* Modal for Product Details */}
+      {selectedProduct && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeModal}
+        >
+          <motion.div
+            className="bg-white rounded-xl max-w-2xl w-full mx-4 p-6 relative max-h-[90vh] overflow-y-auto"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              onClick={closeModal}
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="relative h-96 w-full rounded-lg overflow-hidden mb-4">
+              <Image
+                src={selectedProduct.image}
+                alt={selectedProduct.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <h3 className="text-2xl font-bold text-brown mb-4">
+              {selectedProduct.title}
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              {selectedProduct.description}
+            </p>
+          </motion.div>
+        </motion.div>
+      )}
 
       <Footer />
     </>

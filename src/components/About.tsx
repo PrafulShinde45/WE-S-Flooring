@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { CheckCircle, Star, Truck } from 'lucide-react';
 
 const aboutVariants = {
@@ -23,24 +24,30 @@ const itemVariants = {
 export default function About() {
 
   return (
-    <section id="about" className="py-20 bg-white relative overflow-hidden">
+    <section id="about" className="py-12 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/5 to-transparent animate-pulse"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="p-8 lg:p-12"
+          className="p-4 lg:p-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={aboutVariants}
         >
-          <motion.div
-            className="grid lg:grid-cols-2 gap-12 items-center"
-            variants={aboutVariants}
-          >
+            <motion.div
+              className="grid lg:grid-cols-2 gap-8 items-center"
+              variants={aboutVariants}
+            >
             <motion.div variants={itemVariants} className="space-y-6">
-              <div className="relative h-96 w-full max-w-lg rounded-lg overflow-hidden shadow-2xl mx-auto">
+              <div 
+                className="relative h-90 w-full max-w-lg overflow-hidden shadow-2xl mx-auto" 
+                style={{
+                  clipPath: 'polygon(10% 0%, 0% 20%, 0% 80%, 10% 100%, 70% 100%, 100% 80%, 100% 40%, 90% 20%, 100% 0%)',
+                  borderRadius: '20px'
+                }}
+              >
                 <Image
-                  src="/wall coating_edited.avif"
+                  src="/WhatsApp Image 2025-11-11 at 18.35.13_e98ca34b.jpg"
                   alt="Flooring solutions showcase"
                   fill
                   className="object-cover"
@@ -49,23 +56,21 @@ export default function About() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-brown">
+              <h2 className="text-4xl md:text-5xl font-bold text-black">
                 About Us
               </h2>
-              <blockquote className="text-xl italic text-gold font-medium border-l-4 border-gold pl-4 my-6">
+              <blockquote className="text-xl italic text-gray-500 font-medium border-l-4 border-red-500 pl-4 my-6">
                 "Where every step tells a story of quality and craftsmanship."
               </blockquote>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-black leading-relaxed">
                 We began our journey in the year 2020, with an aim of becoming a successful Business, later the running wheel of time taught us to aim higher. Now We aspire to become a leader in the coating industry then spread Across different locations across India. Located in PUNE, since Its inception WE S FLOORING PVT LTD of the company Has been providing matchless service to its clients While adhering strictly to the quality and the delivery timelines WE S FLOORING PVT LTD has become the synonym For bestFlooring solution Provider in the Vicinity of PUNE.
               </p>
-              <h3 className="text-2xl font-semibold text-brown">History</h3>
-              <p className="text-gray-700 leading-relaxed">
-                WE S FLOORING PVT LTD was founded in 2020 in Pune, India, specializing in floor coatings and polishing. With a commitment to scientific innovation and quality craftsmanship, we have grown to provide comprehensive flooring solutions, serving clients across the region with unmatched expertise and dedication.
-              </p>
-              <h3 className="text-2xl font-semibold text-brown">Why Us</h3>
-              <p className="text-gray-700 leading-relaxed">
-                We offer expert craftsmanship in floor polishing, coatings, and maintenance, using premium, durable materials sourced from trusted suppliers. Our certified professionals receive ongoing training and experience, backed by comprehensive warranties and after-sales support. We provide free consultations and customized project planning, along with eco-friendly practices and sustainable flooring options.
-              </p>
+              <a
+                href="/about"
+                className="inline-block bg-[#e13403] text-white px-6 py-3 rounded-full text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Learn More
+              </a>
             </motion.div>
           </motion.div>
         </motion.div>

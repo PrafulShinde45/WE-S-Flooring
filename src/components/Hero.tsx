@@ -41,9 +41,9 @@ export default function Hero({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/wall coating_edited.avif",
-    "/floor polishing.avif",
-    "/CAR PARK 3.avif"
+    "/IMG-20251111-WA0058[1].jpg",
+    "/WhatsApp Image 2025-11-11 at 18.35.13_e98ca34b.jpg",
+    "/Hero Home.jpg"
   ];
 
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function Hero({
         <motion.div variants={itemVariants}>
           <Link
             href={buttonHref}
-            className="bg-gold text-brown px-8 py-4 rounded-full text-lg font-semibold hover:bg-gold/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="bg-[#e13403] text-white px-8 py-4 rounded-full text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             {buttonText}
           </Link>
