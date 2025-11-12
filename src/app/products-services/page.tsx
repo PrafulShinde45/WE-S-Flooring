@@ -114,7 +114,7 @@ export default function ProductsServices() {
     <>
       <Navbar />
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      <section className="relative h-96 flex items-center justify-center overflow-hidden bg-gray-900">
         <motion.div
           className="absolute inset-0 z-0"
           style={{ y }}
@@ -130,20 +130,20 @@ export default function ProductsServices() {
         </motion.div>
         <div className="relative z-10 text-center text-white px-4">
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg"
+            className="text-3xl md:text-5xl font-bold mb-6 drop-shadow-lg"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Transforming Spaces with Superior Flooring Solutions
+            Superior Flooring Solutions
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md"
+            className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            From industrial durability to elegant design, We’s Flooring delivers excellence at every step.
+            Excellence in every step.
           </motion.p>
           <motion.button
             className="bg-gold text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 flex items-center mx-auto shadow-lg hover:shadow-xl"
@@ -154,30 +154,6 @@ export default function ProductsServices() {
           >
             Explore Our Services <ArrowRight className="ml-2" />
           </motion.button>
-        </div>
-      </section>
-
-      {/* About Our Expertise */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center text-brown mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            About Our Expertise
-          </motion.h2>
-          <motion.p
-            className="text-xl text-center text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            We’s Flooring specializes in industrial and commercial flooring solutions, ensuring industry-standard compliance, timely delivery, and premium quality finishes. Our team delivers excellence in PU Concrete, Epoxy, Anti-Static, and more.
-          </motion.p>
         </div>
       </section>
 
@@ -244,114 +220,9 @@ export default function ProductsServices() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-beige">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center text-brown mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Why Choose Us
-          </motion.h2>
-          <motion.div
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.1 },
-              },
-            }}
-          >
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={index}
-                className="text-center p-6 bg-white rounded-xl shadow-md"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-              >
-                <item.icon className="w-16 h-16 mx-auto mb-4 text-gold" />
-                <h3 className="text-xl font-semibold mb-2 text-brown">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Our Offerings */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center text-brown mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Our Offerings
-          </motion.h2>
-          <div className="flex justify-center mb-8">
-            {Object.keys(offerings).map((tab) => (
-              <button
-                key={tab}
-                className={`px-6 py-3 mx-2 rounded-full font-semibold transition-all duration-300 ${
-                  activeTab === tab ? 'bg-gold text-brown shadow-lg' : 'bg-beige text-brown hover:bg-gold/20'
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {offerings[activeTab as keyof typeof offerings].map((service, index) => (
-              <div key={index} className="bg-beige p-6 rounded-xl border border-beige/50 hover:border-gold/30 transition-colors">
-                <h3 className="text-lg font-semibold text-brown mb-2">{service}</h3>
-                <p className="text-gray-600">Professional {activeTab.toLowerCase()} services for {service.toLowerCase()}.</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-beige text-brown">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Need professional flooring solutions? Let’s get started today.
-          </motion.h2>
-          <motion.button
-            className="bg-gold text-brown px-8 py-4 rounded-full font-semibold hover:bg-beige transition-all duration-300 flex items-center mx-auto shadow-lg hover:shadow-xl"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Get a Quote <Phone className="ml-2" />
-          </motion.button>
-        </div>
-      </section>
+
 
       <Footer />
     </>

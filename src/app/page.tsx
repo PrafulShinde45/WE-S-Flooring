@@ -1,7 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Industries from '@/components/Industries';
 import ProductShowcase from '@/components/ProductShowcase';
 import CatalogBanner from '@/components/CatalogBanner';
 
@@ -13,13 +12,12 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero height="min-h-screen" enableSlider={true} />
       <About />
-      <Industries />
       <ProductShowcase />
-
-      <Reviews />
       <CatalogBanner />
+      <Reviews />
+
       <div className="flex justify-center py-12 bg-gradient-to-br from-beige via-amber-50 to-yellow-50">
         <div className="bg-white rounded-2xl p-6 w-4/5 max-w-4xl mx-4 shadow-2xl border border-gray-200 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-brown mb-3">

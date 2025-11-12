@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Gallery from '@/components/Gallery';
+
 import Hero from '@/components/Hero';
 import { X } from 'lucide-react';
 
@@ -103,6 +103,7 @@ export default function Projects() {
         title="Our Completed Projects"
         subtitle="Delivering excellence, one floor at a time."
         backgroundImage="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
+        height="h-96"
       />
 
       {/* Projects Grid */}
@@ -202,7 +203,7 @@ export default function Projects() {
         )}
       </AnimatePresence>
 
-      <Gallery />
+
       <Footer />
     </>
   );

@@ -62,29 +62,20 @@ export default function ProductShowcase() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative">
+        <div className="relative flex items-center justify-center">
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-red-600 text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300"
+            className="mr-4 bg-red-600 text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0"
             aria-label="Previous"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-red-600 text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300"
-            aria-label="Next"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
 
           {/* Carousel Items */}
-          <div className="overflow-hidden">
+          <div className="overflow-hidden flex-1 max-w-5xl">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
@@ -128,6 +119,16 @@ export default function ProductShowcase() {
               ))}
             </div>
           </div>
+
+          <button
+            onClick={nextSlide}
+            className="ml-4 bg-red-600 text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       </div>
 

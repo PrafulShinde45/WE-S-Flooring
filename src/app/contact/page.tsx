@@ -37,9 +37,10 @@ export default function ContactPage() {
       <Hero
         title="Contact Us"
         subtitle="Crafting perfection from the ground up. Tell us about your space."
-        backgroundImage="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop"
+        backgroundImage="/telephone-612061_1280.jpg"
+        height="h-96"
       />
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
 
       {/* Contact form section */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8 mt-12">
@@ -67,27 +68,7 @@ export default function ContactPage() {
                 </a>
               </motion.p>
 
-              {/* Info tiles */}
-              <motion.div
-                className="grid grid-cols-3 gap-3 mb-8"
-                variants={itemVariants}
-              >
-                {[
-                  { Icon: Phone, label: 'Call', href: 'tel:+919356860035' },
-                  { Icon: Mail, label: 'Email', href: 'mailto:flooringwes@gmail.com' },
-                  { Icon: MapPin, label: 'Visit', href: 'https://maps.google.com' },
-                ].map(({ Icon, label, href }, idx) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    className="group bg-white/60 backdrop-blur-md border border-white/40 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Icon className="w-5 h-5 text-brown mb-1" />
-                    <div className="text-sm font-semibold text-brown">{label}</div>
-                  </Link>
-                ))}
-              </motion.div>
+
 
               {/* Form card */}
               <motion.form
@@ -156,109 +137,99 @@ export default function ContactPage() {
                 </div>
               </motion.form>
 
-              {/* Trust badge */}
-              <motion.div
-                className="mt-8 flex items-center justify-between bg-white/60 rounded-xl border border-white/60 p-4 shadow-lg"
+
+            </motion.div>
+          </div>
+        </div>
+        {/* Map and contact details section */}
+        <div className="relative bg-white flex items-center">
+          <div className="absolute inset-0 texture-marble opacity-40 pointer-events-none" />
+          <div className="relative z-10 py-12 px-4 sm:px-8 lg:px-12 w-full">
+            <motion.div
+              className="max-w-xl mx-auto"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold text-brown mb-8"
                 variants={itemVariants}
               >
-                <div className="flex items-center gap-3">
-                  <Shield className="w-6 h-6 text-brown" />
-                  <p className="text-brown font-medium">
-                    Over <span className="text-gold font-bold">10,000 sq. ft.</span> of excellence installed
-                  </p>
-                </div>
-                <div className="hidden sm:block text-sm text-gray-600">
-                  Licensed • Insured • 5-Year Warranty
-                </div>
+                Find Us
+              </motion.h2>
+
+              {/* Map */}
+              <motion.div
+                className="mb-8 rounded-2xl overflow-hidden border-2 border-brown/30 shadow-2xl relative"
+                variants={itemVariants}
+              >
+                <div className="absolute inset-0 pointer-events-none texture-wood opacity-20" />
+                <iframe
+                  title="Our Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.868035630902!2d-73.989!3d40.741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzI3LjYiTiA3M8KwNTknMjAuNCJX!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </motion.div>
+
+              {/* Contact details */}
+              <motion.div
+                className="space-y-4"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                {[
+                  {
+                    Icon: Phone,
+                    title: 'Call us',
+                    text: '+91 93568 60035',
+                    href: 'tel:+919356860035',
+                  },
+                  {
+                    Icon: Mail,
+                    title: 'Email',
+                    text: 'flooringwes@gmail.com',
+                    href: 'mailto:flooringwes@gmail.com',
+                  },
+                  {
+                    Icon: MapPin,
+                    title: 'Location',
+                    text: 'WE S FLOORING PVT LTD.,Rimzim Bungalow, Near Unique Classes, Old Sangavi, Pune - 411027',
+                    href: 'https://maps.google.com',
+                  },
+                ].map(({ Icon, title, text, href }, i) => (
+                  <motion.a
+                    key={title}
+                    href={href}
+                    className="block group rounded-xl bg-white/60 backdrop-blur-md border border-white/40 p-5 shadow-lg hover:shadow-2xl transition-all"
+                    variants={itemVariants}
+                    whileHover={{ x: 4 }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-brown/10 text-brown flex items-center justify-center shadow-inner">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-brown">{title}</div>
+                        <div className="text-gray-700">{text}</div>
+                      </div>
+                    </div>
+                  </motion.a>
+                ))}
               </motion.div>
             </motion.div>
           </div>
         </div>
-        {/* Right side - decorative panel hidden on mobile */}
-        <div className="hidden lg:block relative">
-          <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop"
-            alt="Showroom vignette"
-            fill
-            className="object-cover rounded-2xl shadow-2xl"
-          />
-        </div>
       </section>
 
-      {/* Map + details */}
-      <section className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-8">
-          {/* Map card */}
-          <motion.div
-            className="lg:col-span-2 rounded-2xl overflow-hidden border-2 border-brown/30 shadow-2xl relative"
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="absolute inset-0 pointer-events-none texture-wood opacity-20" />
-            <iframe
-              title="Our Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.868035630902!2d-73.989!3d40.741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzI3LjYiTiA3M8KwNTknMjAuNCJX!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
-              width="100%"
-              height="420"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </motion.div>
 
-          {/* Contact details tiles with motion like floor planks */}
-          <motion.div
-            className="space-y-4"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                Icon: Phone,
-                title: 'Call us',
-                text: '+91 93568 60035',
-                href: 'tel:+919356860035',
-              },
-              {
-                Icon: Mail,
-                title: 'Email',
-                text: 'flooringwes@gmail.com',
-                href: 'mailto:flooringwes@gmail.com',
-              },
-              {
-                Icon: MapPin,
-                title: 'Location',
-                text: 'WE S FLOORING PVT LTD.,Rimzim Bungalow, Near Unique Classes, Old Sangavi, Pune - 411027',
-                href: 'https://maps.google.com',
-              },
-            ].map(({ Icon, title, text, href }, i) => (
-              <motion.a
-                key={title}
-                href={href}
-                className="block group rounded-xl bg-gradient-to-br from-marble/60 to-white p-5 border border-gray-200 shadow-lg hover:shadow-2xl transition-all"
-                variants={itemVariants}
-                whileHover={{ x: 4 }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-brown/10 text-brown flex items-center justify-center shadow-inner">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-brown">{title}</div>
-                    <div className="text-gray-700">{text}</div>
-                  </div>
-                </div>
-              </motion.a>
-            ))}
-          </motion.div>
-        </div>
-   
-      </section>
       <Footer />
 
       <style>{`

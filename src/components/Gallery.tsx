@@ -38,25 +38,6 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-20 bg-marble texture-marble">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center text-brown mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Our Work
-        </motion.h2>
-        <motion.p
-          className="text-xl text-center text-gray-700 mb-16 max-w-3xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Explore our portfolio of stunning flooring installations that showcase our commitment to excellence and creativity.
-        </motion.p>
-
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]"
           variants={galleryVariants}

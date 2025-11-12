@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const heroVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -25,6 +26,7 @@ interface HeroProps {
   buttonHref?: string;
   backgroundImage?: string;
   height?: string;
+  enableSlider?: boolean;
 }
 
 export default function Hero({
@@ -33,21 +35,48 @@ export default function Hero({
   buttonText = "Get a Free Quote",
   buttonHref = "#contact",
   backgroundImage = "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
-  height = "min-h-screen",
+  height = "h-[28rem]", // Slightly taller than h-96 (448px)
+  enableSlider = false,
 }: HeroProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    "/wall coating_edited.avif",
+    "/floor polishing.avif",
+    "/CAR PARK 3.avif"
+  ];
+
+  useEffect(() => {
+    if (enableSlider) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 4000); // Change image every 4 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [enableSlider, images.length]);
+
+  const currentImage = enableSlider ? images[currentImageIndex] : backgroundImage;
+
   return (
     <section id="home" className={`relative ${height} flex items-center justify-center overflow-hidden`}>
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        key={enableSlider ? currentImageIndex : 'static'}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0 z-0"
+      >
         <Image
-          src={backgroundImage}
+          src={currentImage}
           alt="Hero background"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-black/40"></div>
-      </div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">

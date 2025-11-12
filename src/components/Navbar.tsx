@@ -126,7 +126,14 @@ export default function Navbar() {
               className={`transition-colors px-3 py-2 rounded-md text-sm font-medium ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
                 }`}
             >
-              Products & Services
+              Products
+            </Link>
+            <Link
+              href="/industries"
+              className={`transition-colors px-3 py-2 rounded-md text-sm font-medium ${isScrolled ? 'text-brown hover:text-gold' : 'text-white hover:text-gold'
+                }`}
+            >
+              Industries
             </Link>
             <Link
               href="/projects"
@@ -261,6 +268,13 @@ export default function Navbar() {
                 onClick={toggleMenu}
               >
                 Products & Services
+              </Link>
+              <Link
+                href="/industries"
+                className="text-brown hover:text-gold block px-3 py-2 rounded-md text-base font-medium"
+                onClick={toggleMenu}
+              >
+                Industries
               </Link>
               <Link
                 href="/projects"
