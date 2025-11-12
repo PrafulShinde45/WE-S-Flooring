@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const projects = [
@@ -36,7 +36,33 @@ const projects = [
 
 export default function ProductShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShow = 4;
+  const [itemsToShow, setItemsToShow] = useState(1);
+
+  useEffect(() => {
+    const updateItemsToShow = () => {
+      if (window.innerWidth >= 1280) {
+        setItemsToShow(4);
+      } else if (window.innerWidth >= 1024) {
+        setItemsToShow(3);
+      } else if (window.innerWidth >= 640) {
+        setItemsToShow(2);
+      } else {
+        setItemsToShow(1);
+      }
+    };
+
+    updateItemsToShow();
+    window.addEventListener('resize', updateItemsToShow);
+
+    return () => window.removeEventListener('resize', updateItemsToShow);
+  }, []);
+
+  useEffect(() => {
+    setCurrentIndex((prev) => {
+      const maxIndex = Math.max(0, projects.length - itemsToShow);
+      return Math.min(prev, maxIndex);
+    });
+  }, [itemsToShow]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -62,11 +88,11 @@ export default function ProductShowcase() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="mr-4 bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 relative -top-7"
+            className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:mr-4 sm:relative sm:-top-7"
             aria-label="Previous"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,7 +101,7 @@ export default function ProductShowcase() {
           </button>
 
           {/* Carousel Items */}
-          <div className="overflow-hidden flex-1 max-w-5xl">
+          <div className="w-full overflow-hidden flex-1 max-w-5xl">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
@@ -122,7 +148,7 @@ export default function ProductShowcase() {
 
           <button
             onClick={nextSlide}
-            className="ml-4 bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 relative -top-7"
+            className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:ml-4 sm:relative sm:-top-7"
             aria-label="Next"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

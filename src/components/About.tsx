@@ -65,12 +65,6 @@ export default function About() {
               <p className="text-lg text-black leading-relaxed">
                 We began our journey in the year 2020, with an aim of becoming a successful Business, later the running wheel of time taught us to aim higher. Now We aspire to become a leader in the coating industry then spread Across different locations across India. Located in PUNE, since Its inception WE S FLOORING PVT LTD of the company Has been providing matchless service to its clients While adhering strictly to the quality and the delivery timelines WE S FLOORING PVT LTD has become the synonym For bestFlooring solution Provider in the Vicinity of PUNE.
               </p>
-              <a
-                href="/about"
-                className="inline-block bg-[#e13403] text-white px-6 py-3 rounded-full text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                Learn More
-              </a>
             </motion.div>
           </motion.div>
         </motion.div>

@@ -104,6 +104,7 @@ export default function Projects() {
         subtitle="Delivering excellence, one floor at a time."
         backgroundImage="/IMG-20251111-WA0058[1].jpg"
         height="h-[70vh]"
+        enableSlider={false}
       />
 
       {/* Projects Grid */}

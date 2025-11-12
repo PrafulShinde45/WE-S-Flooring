@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -16,6 +18,14 @@ export default function Home() {
       <Navbar />
       <Hero height="min-h-screen" enableSlider={true} />
       <About />
+      <div className="flex justify-center mt-0 mb-0">
+        <Link
+          href="/about"
+          className="inline-block bg-[#e13403] text-white px-8 py-3 rounded-lg text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Learn More
+        </Link>
+      </div>
       <ProductShowcase />
       <CatalogBanner />
       <Reviews />
@@ -31,7 +41,7 @@ export default function Home() {
             Get in touch with our experts for a free consultation and quote
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="inline-block bg-[#e13403] text-white px-8 py-3 rounded-lg text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Us Today

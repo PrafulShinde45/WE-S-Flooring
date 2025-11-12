@@ -50,7 +50,7 @@ export default function CatalogBanner() {
             <div className="flex flex-col gap-3 lg:gap-4 z-10">
               {/* Image 1 */}
               <div className="w-32 h-24 lg:w-40 lg:h-32 rounded-lg shadow-xl overflow-hidden">
-                <Image src="/staircase PU.avif" alt="Staircase PU" fill className="object-cover" />
+                <Image src="/staircasePU.avif" alt="Staircase PU" fill sizes="(max-width: 768px) 128px, 160px" className="object-cover" />
               </div>
               {/* Image 2 */}
               <div className="w-32 h-24 lg:w-40 lg:h-32 rounded-lg shadow-xl overflow-hidden mx-auto -translate-x-2 lg:-translate-x-3">
