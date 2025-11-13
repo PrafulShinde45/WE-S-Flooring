@@ -179,7 +179,7 @@ export default function ContactPage() {
                 <div className="absolute inset-0 pointer-events-none texture-wood opacity-20" />
                 <iframe
                   title="Our Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.868035630902!2d-73.989!3d40.741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzI3LjYiTiA3M8KwNTknMjAuNCJX!5e0!3m2!1sen!2sus!4v1610000000000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.123456789!2d73.7438976!3d18.5374829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMTjCsDMyJzE2LjQiTiA3M8KwNTknMjAuNCJF!5e0!3m2!1sen!2sin!4v1690000000!5m2!1sen!2sin&markers=color:red%7C18.5374829,73.7438976"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -214,7 +214,7 @@ export default function ContactPage() {
                     Icon: MapPin,
                     title: 'Location',
                     text: 'WE S FLOORING PVT LTD.,Rimzim Bungalow, Near Unique Classes, Old Sangavi, Pune - 411027',
-                    href: 'https://maps.google.com',
+                    href: 'https://www.google.com/maps/search/WE+S+FLOORING+PVT+LTD.+Vishal+more+Rimzim+Bungalow,+Near+Unique+Classes,+Old+Sangavi,+Pune+-+411027/@18.5374829,73.7438976,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D',
                   },
                 ].map(({ Icon, title, text, href }, i) => (
                   <motion.a

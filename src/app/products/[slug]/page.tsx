@@ -165,8 +165,7 @@ const products = [
     slug: 'self-leveling-epoxy-flooring-system',
     title: 'Self-Leveling Epoxy Flooring System',
     category: 'Epoxy Flooring',
-    description: 'Seamless, self-leveling epoxy for smooth, durable surfaces in industrial and commercial spaces. Ideal for warehouses, factories, and showrooms. Self-leveling epoxy flooring refers to a special type of epoxy resin, one which, as the name implies, can actually level itself, essentially making your floor self-healing. Epoxy flooring over your current concrete floor, and as the epoxy spreads out, it fills in any cracks or chips in your concrete floor, leaving you with a level surface with no sign of damage or wear.',
-    shortDescription: '.',
+    description: `Self-leveling epoxy flooring is a high-performance resin that naturally spreads across the floor to create a smooth and seamless surface. When applied over an existing concrete floor, the epoxy flows into cracks, chips, and uneven areas, effectively repairing the surface while creating a glossy, durable finish. This system provides an attractive, long-lasting surface with no visible signs of damage or wear, making it suitable for both industrial and commercial environments.`,
     images: ['/Epoxy%20flooring.jpg', '/Epoxy%20flooring%201.jpg', '/Epoxy%20flooring%203.jpg', '/Epoxy%20flooring2.jpg'],
     features: [
       'Seamless and smooth finish',
@@ -210,9 +209,8 @@ const products = [
     slug: 'decorative-flooring-system',
     title: 'Decorative Flooring System',
     category: 'Decorative Flooring',
-    description: 'Aesthetic and functional decorative flooring solutions for modern interiors. Custom designs for residential and commercial applications.',
-    shortDescription: 'Transform spaces with stunning decorative flooring that combines beauty and functionality.',
-    images: ['/decorative-flooring-system.avif', '/floor polishing.avif'],
+    description: `A decorative epoxy flooring system enhances the appearance of standard epoxy by adding creative visual effects. While regular epoxy already offers strength, gloss, and durability, decorative epoxy brings a unique touch that helps the flooring stand out. One of the most popular decorative methods is the chip or flake flooring system, where acrylic flakes are mixed with epoxy and then sealed with a clear top coat. This process, when done professionally, results in a beautiful, sparkling finish with customizable patterns that elevate the overall look of the floor.`,
+    images: ['/dfs.jpg', '/dfs1.jpg', '/dfs2.jpg'],
     features: [
       'Custom design options',
       'High aesthetic appeal',
@@ -255,9 +253,8 @@ const products = [
     slug: 'epoxy-resurfacing-floor-repair',
     title: 'Epoxy Resurfacing / Floor Repair Service',
     category: 'Floor Repair',
-    description: 'Self-leveling epoxy flooring refers to a special type o',
-    shortDescription: 'Restore and renew your floors with our professional epoxy repair services.',
-    images: ['/epoxy-resurfacing-floor-repair.avif'],
+    description: `Epoxy resurfacing is an effective and affordable solution for restoring damaged or uneven concrete floors. Over time, concrete surfaces may develop cracks, holes, or wear that affect both safety and appearance. The resurfacing process involves removing any existing coating, preparing the floor, and filling imperfections before applying a durable epoxy layer to seal the surface. A final clear top coat enhances strength and shine, leaving the floor looking newer, smoother, and safer.`,
+    images: ['/ers.jpg', '/ers1.jpg'],
     features: [
       'Crack repair',
       'Chip restoration',
@@ -295,9 +292,8 @@ const products = [
     slug: 'pu-concrete-flooring',
     title: 'PU Concrete Flooring',
     category: 'Polyurethane Flooring',
-    description: 'Durable polyurethane concrete for high-traffic industrial areas. Provides excellent abrasion resistance and chemical protection.',
-    shortDescription: 'Robust PU concrete flooring for industrial applications.',
-    images: ['/pcf1.jpg','/pcf.jpg','/pcf2.jpg','/pcf3.jpg'],
+    description: `PU Concrete is a unique flooring system created by combining urethane and cement to form a thick, self-leveling surface that withstands thermal shocks, chemical exposure, heavy impacts, and continuous vehicular traffic. Known for decades of reliable performance in demanding industrial settings, PU Concrete is built to endure both physical and chemical abuses. It is seamless, hygienic, odorless, and resistant to bacterial growth, making it ideal for food and beverage industries where strict cleanliness standards are required. PU Concrete floors can be steam-cleaned to achieve sanitation levels comparable to stainless steel.`,
+    images: ['/pcf1.jpg', '/pcf.jpg', '/pcf2.jpg', '/pcf3.jpg'],
     features: [
       'High abrasion resistance',
       'Chemical protection',
@@ -340,9 +336,8 @@ const products = [
     slug: 'antistatic-flooring-system',
     title: 'Antistatic Flooring System',
     category: 'Specialty Flooring',
-    description: 'Electrostatic discharge protection for sensitive environments. Essential for electronics manufacturing and data centers.',
-    shortDescription: 'Antistatic flooring for sensitive electronic environments.',
-    images: ['/EPU.jpg'],
+    description: `Antistatic flooring is essential in environments where electro-static discharge can damage sensitive electronic equipment or pose risks around volatile materials. ESD flooring prevents static charge from building up by dissipating it safely to the ground. These resin-based systems provide a seamless, attractive, and highly durable surface with superior static control properties. Antistatic flooring ensures protection for both personnel and equipment, while also offering exceptional strength and stability.`,
+    images: ['/afs.jpg', '/afs1.jpg', '/afs2.jpg', '/afs3.jpg'],
     features: [
       'Electrostatic discharge protection',
       'High durability and wear resistance',
@@ -382,57 +377,55 @@ const products = [
     ]
   },
   {
-    slug: 'line-marking-safety-marker',
-    title: 'Line Marking Safety Marker',
-    category: 'Safety Solutions',
-    description: 'Precision line marking for safety and organization in facilities. Color-coded markings for aisles, zones, and hazards.',
-    shortDescription: 'Precision line marking for safety and organization.',
-    images: ['/Sinage marking.jpg'],
+    slug: 'micro-topping',
+    title: 'Micro Topping',
+    category: 'Floor Refinishing',
+    description: `Micro topping is a specialized cementitious overlay system designed to transform worn or damaged concrete floors into smooth, durable surfaces. This thin-layer application, typically 1/8 to 1/4 inch thick, provides a seamless finish that can be polished to a high gloss or left matte. Micro topping is ideal for refinishing existing floors without the need for extensive demolition or removal of the original concrete. It offers excellent adhesion to concrete substrates and can be customized with various colors and textures. The system is environmentally friendly, using water-based materials that reduce volatile organic compounds. Micro topping is commonly used in commercial spaces, retail areas, and industrial facilities where a cost-effective, quick renovation is required.`,
+    images: ['/mt.jpg', '/mt2.jpg', '/mt3.jpg'],
     features: [
-      'Precision line marking',
-      'Color-coded safety markings',
-      'High visibility',
-      'Durable and long-lasting',
-      'Quick application',
+      'Smooth surface finish',
+      'High durability',
+      'Quick installation',
       'Low odor during application',
       'Excellent adhesion to concrete',
       'UV stable colors',
-      'Customizable designs',
+      'Customizable thickness',
       'Anti-slip options available',
       'Environmentally friendly',
       'Cost-effective',
       'Professional installation',
       'Warranty included',
-      'Easy to clean and maintain'
+      'Easy to clean and maintain',
+      'Chemical resistant',
+      'Seamless finish'
     ],
     specifications: {
-      'Type': 'Line marking',
-      'Drying Time': '4-8 hours',
-      'Coverage': 'Varies by area',
-      'Colors': 'High visibility colors',
-      'Application': 'Professional',
-      'Warranty': '2 years'
+      'Thickness': '1-3mm',
+      'Drying Time': '12-24 hours',
+      'Coverage': '1kg per 2-3 sqm',
+      'Colors': 'Multiple options',
+      'Application': 'Self-leveling',
+      'Warranty': '3 years'
     },
     benefits: [
-      { icon: Shield, title: 'Safety', desc: 'Enhances workplace safety' },
-      { icon: CheckCircle, title: 'Organization', desc: 'Clear zone identification' },
-      { icon: Zap, title: 'Efficiency', desc: 'Quick and easy application' },
-      { icon: Award, title: 'Compliance', desc: 'Meets industry standards' }
+      { icon: Shield, title: 'Durability', desc: 'Withstands heavy use' },
+      { icon: Sparkles, title: 'Aesthetics', desc: 'Modern, smooth appearance' },
+      { icon: Droplets, title: 'Hygiene', desc: 'Easy to clean and sanitize' },
+      { icon: Zap, title: 'Performance', desc: 'High chemical resistance' }
     ],
     applications: [
-      { name: 'Warehouses', icon: Building },
-      { name: 'Factories', icon: Hammer },
-      { name: 'Parking Lots', icon: Car },
-      { name: 'Commercial Spaces', icon: Users }
+      { name: 'Commercial Spaces', icon: Users },
+      { name: 'Residential', icon: Building },
+      { name: 'Offices', icon: Building },
+      { name: 'Retail Spaces', icon: Users }
     ]
   },
   {
     slug: 'industrial-commercial-wall-coating',
     title: 'Industrial & Commercial Wall Coating',
     category: 'Wall Coatings',
-    description: 'Protective and aesthetic wall coatings for industrial spaces. Resistant to impacts, chemicals, and easy to clean.',
-    shortDescription: 'Protective wall coatings for industrial and commercial spaces.',
-    images: ['/PU wallcoating.jpg'],
+    description: `Industrial and commercial wall coatings are specialized protective systems designed to enhance the durability and appearance of interior and exterior walls in demanding environments. These coatings provide superior resistance to impacts, chemicals, moisture, and abrasion while maintaining an attractive finish. Available in various formulations including epoxy, polyurethane, and acrylic systems, they offer excellent adhesion to different substrates and can be customized for specific performance requirements. Wall coatings are essential for maintaining hygiene standards in food processing facilities, withstanding harsh chemicals in manufacturing plants, and providing long-lasting protection in commercial spaces.`,
+    images: ['/pwc.jpg'],
     features: [
       'Impact resistant',
       'Chemical protection',
@@ -475,9 +468,8 @@ const products = [
     slug: 'sealant-application-services',
     title: 'Sealant Application Services',
     category: 'Sealant Services',
-    description: 'Professional sealant application for enhanced durability and protection. Seals joints and prevents water ingress.',
-    shortDescription: 'Professional sealant application for enhanced durability.',
-    images: ['/sealant-application-services.avif'],
+    description: `Professional sealant application services provide comprehensive joint sealing solutions to enhance building durability and prevent water ingress. Our expert technicians use high-quality sealants to fill expansion joints, control joints, and perimeter gaps in floors and walls. These services are crucial for maintaining structural integrity, preventing moisture damage, and ensuring long-term performance of flooring systems. We offer various sealant types including polyurethane, silicone, and epoxy-based products, each selected for specific application requirements and environmental conditions. Our sealant application ensures proper joint movement accommodation while maintaining waterproofing effectiveness.`,
+    images: ['/sas.jpg', '/sas1.jpg', '/sas2.jpg', '/sas3.jpg'],
     features: [
       'Joint sealing',
       'Water ingress prevention',
@@ -520,9 +512,8 @@ const products = [
     slug: 'waterproofing',
     title: 'Waterproofing',
     category: 'Waterproofing Solutions',
-    description: 'Advanced waterproofing solutions to protect floors from moisture and water damage. Ideal for wet areas and basements.',
-    shortDescription: 'Advanced waterproofing for floors and wet areas.',
-    images: ['/Waterproofing.jpg','/wp1.jpg','/Waterproofing.jpg','/wp.jpg'],
+    description: `Advanced waterproofing solutions provide comprehensive protection against moisture and water damage for floors and structures. Our specialized systems create impermeable barriers that prevent water penetration while maintaining breathability to avoid moisture buildup. These solutions are particularly effective in wet areas, basements, and environments exposed to high humidity or water exposure. We utilize premium waterproofing materials including cementitious coatings, liquid membranes, and crystalline waterproofing systems that chemically react with concrete to create permanent waterproofing from within. Our waterproofing services ensure long-term protection against leaks, mold growth, and structural damage.`,
+    images: ['/Waterproofing.jpg', '/wp1.jpg', '/Waterproofing.jpg', '/wp.jpg'],
     features: [
       'Moisture protection',
       'Water damage prevention',
@@ -565,9 +556,8 @@ const products = [
     slug: 'sinage-marking',
     title: 'Sinage Marking',
     category: 'Safety Solutions',
-    description: 'Custom signage and marking services for clear navigation and safety. Durable and compliant with industry standards.',
-    shortDescription: 'Custom signage for clear navigation and safety.',
-    images: ['/Sinage marking1.jpg'],
+    description: `Custom signage and marking services provide essential visual guidance systems for safe and efficient navigation in industrial and commercial environments. Our specialized marking solutions include floor markings, directional signage, hazard warnings, and safety zone delineations that comply with international safety standards. We utilize high-visibility, durable materials that withstand heavy traffic, chemical exposure, and harsh environmental conditions. Our signage marking services help organizations maintain compliance with occupational health and safety regulations while improving operational efficiency and reducing accident risks.`,
+    images: ['/sm1.jpg', '/sm2.jpg', '/sm3.jpg'],
     features: [
       'Custom signage designs',
       'High visibility markings',
@@ -607,12 +597,11 @@ const products = [
     ]
   },
   {
-    slug: 'pu-wallcoating',
-    title: 'PU Wallcoating',
-    category: 'Wall Coatings',
-    description: 'High-performance polyurethane wall coatings for durability and aesthetics. Smooth finish with excellent adhesion.',
-    shortDescription: 'High-performance PU wall coatings for durability.',
-    images: ['/PU wallcoating.jpg'],
+    slug: 'epu-flooring-system',
+    title: 'EPU Flooring System',
+    category: 'Epoxy Flooring',
+    description: `EPU flooring systems combine the superior chemical resistance of epoxy with the flexibility and UV stability of polyurethane, creating a high-performance coating ideal for demanding industrial and commercial environments. This hybrid system provides exceptional durability, excellent adhesion to concrete substrates, and resistance to thermal shock, abrasion, and chemical exposure. EPU flooring is particularly suitable for areas requiring both mechanical strength and aesthetic appeal, offering a seamless, glossy finish that enhances the overall appearance while providing long-term protection.`,
+    images: ['/EPU.jpg', '/epu1.jpg', '/epu2.jpg'],
     features: [
       'High-performance coating',
       'Smooth finish',
@@ -631,33 +620,32 @@ const products = [
       'Chemical resistant'
     ],
     specifications: {
-      'Thickness': '1-3mm',
-      'Drying Time': '12-24 hours',
-      'Coverage': '1kg per 2-3 sqm',
+      'Thickness': '2-5mm',
+      'Drying Time': '24-48 hours',
+      'Coverage': '1kg per 1-2 sqm',
       'Colors': 'Multiple options',
-      'Application': 'Roller/Spray',
-      'Warranty': '3 years'
+      'Application': 'Self-leveling',
+      'Warranty': '5 years'
     },
     benefits: [
-      { icon: Shield, title: 'Durability', desc: 'Long-lasting protection' },
-      { icon: Sparkles, title: 'Aesthetics', desc: 'Smooth, premium finish' },
+      { icon: Shield, title: 'Durability', desc: 'Withstands heavy industrial use' },
+      { icon: Sparkles, title: 'Aesthetics', desc: 'Modern, clean appearance' },
       { icon: Droplets, title: 'Hygiene', desc: 'Easy to clean and sanitize' },
       { icon: Zap, title: 'Performance', desc: 'High chemical resistance' }
     ],
     applications: [
-      { name: 'Commercial Spaces', icon: Users },
-      { name: 'Offices', icon: Building },
-      { name: 'Hotels', icon: Star },
-      { name: 'Residential', icon: Building }
+      { name: 'Warehouses', icon: Building },
+      { name: 'Factories', icon: Hammer },
+      { name: 'Showrooms', icon: Paintbrush },
+      { name: 'Commercial Spaces', icon: Users }
     ]
   },
   {
     slug: 'pu-dust-proof-staircase-coating',
     title: 'PU Dust Proof Staircase Coating',
     category: 'Staircase Coatings',
-    description: 'Dust-proof polyurethane coatings for staircases to ensure safety and cleanliness. Non-slip and easy maintenance.',
-    shortDescription: 'Dust-proof PU coatings for staircases.',
-    images: ['/staircasePU.avif','/psc1.jpg','/psc.jpg','psc2.jpg'],
+    description: `PU Dust Proof Staircase Coating provides specialized polyurethane formulations designed specifically for staircase applications where safety and cleanliness are paramount. This coating creates a seamless, dust-resistant surface that prevents the accumulation of dust and debris on stair treads and risers. The non-slip properties ensure excellent traction even in wet conditions, reducing the risk of slips and falls. The coating is highly durable, resisting wear from foot traffic while maintaining its aesthetic appeal. Easy to clean and maintain, it requires minimal upkeep while providing long-term protection for both residential and commercial staircases.`,
+    images: ['/staircasePU.avif', '/psc1.jpg', '/psc.jpg', 'psc2.jpg'],
     features: [
       'Dust-proof protection',
       'Non-slip surface',
@@ -700,8 +688,7 @@ const products = [
     slug: 'pu-car-park-coating',
     title: 'PU Car Park Coating',
     category: 'Car Park Coatings',
-    description: 'Robust polyurethane coatings for car parks to withstand heavy traffic. UV resistant and fast curing.',
-    shortDescription: 'Robust PU coatings for car parks.',
+    description: `PU Car Park Coating delivers specialized polyurethane systems engineered for the demanding conditions of parking facilities. This high-performance coating provides exceptional resistance to vehicular traffic, oil spills, and harsh weather conditions while maintaining excellent UV stability. The seamless, monolithic surface prevents water pooling and reduces maintenance requirements. Available in various colors and finishes, it enhances visibility of parking lines and improves overall safety. The coating's fast-curing properties minimize downtime during application, making it ideal for busy commercial and residential parking areas.`,
     images: ['/pcp.jpg', '/pcp1.jpg', '/pcp2.jpg', '/CAR PARK 3.avif'],
     features: [
       'Heavy traffic resistance',
@@ -745,9 +732,8 @@ const products = [
     slug: 'pu-waterproof-coating',
     title: 'PU Waterproof Coating',
     category: 'Waterproofing Solutions',
-    description: 'Waterproof polyurethane coatings for superior moisture resistance. Flexible and long-lasting protection.',
-    shortDescription: 'Waterproof PU coatings for moisture resistance.',
-    images: ['/puc.jpg','/puc2.jpg','/puc1.jpg','/puc3.jpg',],
+    description: `PU Waterproof Coating offers advanced polyurethane-based waterproofing systems designed to provide superior moisture protection for a wide range of applications. This flexible coating creates a seamless, impermeable barrier that prevents water penetration while maintaining excellent elasticity to accommodate structural movement. The coating exhibits outstanding resistance to UV degradation, chemical exposure, and mechanical wear, ensuring long-term performance in demanding environments. Its fast-curing properties allow for quick application and minimal downtime, making it ideal for both new construction and renovation projects.`,
+    images: ['/puc.jpg', '/puc2.jpg', '/puc1.jpg', '/puc3.jpg',],
     features: [
       'Superior moisture resistance',
       'Flexible coating',
@@ -790,9 +776,8 @@ const products = [
     slug: 'food-grade-epoxy-flooring',
     title: 'Food Grade Epoxy Flooring',
     category: 'Food Safe Flooring',
-    description: 'Hygienic, food-safe epoxy flooring for kitchens and food processing areas. NSF certified and seamless.',
-    shortDescription: 'Hygienic food-safe epoxy flooring for kitchens.',
-    images: ['/fef.jpg','/fef1.jpg','/fef.jpg','/fef2.jpg'],
+    description: `Food Grade Epoxy Flooring provides specialized epoxy systems designed specifically for food processing and preparation environments. This NSF-certified flooring meets strict hygiene standards required by food safety regulations, offering a seamless, non-porous surface that prevents bacterial growth and simplifies cleaning procedures. The flooring is resistant to food acids, oils, and cleaning chemicals while maintaining excellent durability under heavy foot traffic and equipment movement. Available in various colors and finishes, it helps facilities comply with HACCP and FDA guidelines while providing an attractive, professional appearance.`,
+    images: ['/fef.jpg', '/fef1.jpg', '/fef.jpg', '/fef2.jpg'],
     features: [
       'NSF certified',
       'Hygienic surface',
@@ -835,9 +820,8 @@ const products = [
     slug: 'densification-polished-concrete',
     title: 'Densification Polished Concrete',
     category: 'Polished Concrete',
-    description: 'Densified and polished concrete for a sleek, low-maintenance finish. Eco-friendly and cost-effective.',
-    shortDescription: 'Sleek polished concrete for low-maintenance finishes.',
-    images: ['/Densification polished concrete.jpg'],
+    description: `Densification Polished Concrete transforms existing concrete surfaces through a specialized process that hardens and polishes the material to create a durable, attractive finish. The densification process involves applying chemical hardeners that penetrate the concrete surface, increasing its density and resistance to wear. This is followed by multiple grinding and polishing steps that achieve a high-gloss, reflective surface. The result is a low-maintenance flooring solution that maintains its appearance with minimal upkeep while providing excellent durability for commercial and industrial applications.`,
+    images: ['/dpc.jpg', '/DPC2.jpg'],
     features: [
       'Sleek polished finish',
       'Low-maintenance surface',
@@ -880,9 +864,8 @@ const products = [
     slug: 'cementious-self-leveling-underlay',
     title: 'Cementious Self Leveling Underlay',
     category: 'Underlay Solutions',
-    description: 'Cementitious self-leveling underlay for even, stable flooring preparation. Fast drying and high strength.',
-    shortDescription: 'Cementitious underlay for stable flooring preparation.',
-    images: ['/Cementious self leveling underlay.jpg'],
+    description: `Cementitious Self-Leveling Underlay provides a premium cement-based leveling compound designed to create perfectly flat and stable surfaces for flooring installations. This high-performance underlay flows effortlessly to fill low spots, cracks, and imperfections, creating a uniform base that ensures optimal adhesion and performance of finished flooring systems. The fast-setting formula allows for quick installation and reduced project timelines while maintaining exceptional compressive strength and dimensional stability. Ideal for both new construction and renovation projects, this underlay system eliminates the need for extensive surface preparation and ensures long-term durability of the finished floor.`,
+    images: ['/csu.jpg', '/csu1.jpg', '/csu2.jpg', '/csu3.jpg'],
     features: [
       'Even surface preparation',
       'High strength',
@@ -1000,9 +983,8 @@ export default function ProductPage() {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                        index === currentImageIndex ? 'border-[#e13403]' : 'border-gray-200'
-                      }`}
+                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 ${index === currentImageIndex ? 'border-[#e13403]' : 'border-gray-200'
+                        }`}
                     >
                       <Image
                         src={image}
@@ -1025,7 +1007,7 @@ export default function ProductPage() {
                   {product.title}
                 </h1>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  {product.shortDescription}
+                  {product.description}
                 </p>
               </div>
 
@@ -1138,21 +1120,24 @@ export default function ProductPage() {
             </div>
 
             {/* Right Image - Large vertical (50% height) */}
-            <div className="relative group overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] col-span-1 row-span-2">
-              <Image
-                src={product.images[3]}
-                alt={`${product.title} - Image 4`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out">
-                <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-4 border border-white/20">
-                  <p className="text-xl font-bold mb-1">{product.title}</p>
-                  <p className="text-sm opacity-90">Professional Installation</p>
+            {product?.images?.[3] && (
+              <div className="relative group overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] col-span-1 row-span-2">
+                <Image
+                  src={product.images[3]}
+                  alt={`${product.title} - Image 4`}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                  <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-4 border border-white/20">
+                    <p className="text-xl font-bold mb-1">{product.title}</p>
+                    <p className="text-sm opacity-90">Professional Installation</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
+
           </div>
         </div>
       </section>

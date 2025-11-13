@@ -49,14 +49,14 @@ const services: Service[] = [
     title: 'Decorative Flooring System',
     description: 'Aesthetic and functional decorative flooring solutions for modern interiors. Custom designs for residential and commercial applications.',
     icon: Paintbrush,
-    image: '/decorative-flooring-system.avif',
+    image: '/dfs.jpg',
     slug: 'decorative-flooring-system',
   },
   {
     title: 'Epoxy Resurfacing / Floor Repair Service',
     description: 'Expert epoxy resurfacing and repair to restore damaged flooring. Quick and efficient solutions for cracks, chips, and wear.',
     icon: Hammer,
-    image: '/epoxy-resurfacing-floor-repair.avif',
+    image: '/ers.jpg',
     slug: 'epoxy-resurfacing-floor-repair',
   },
   {
@@ -70,28 +70,28 @@ const services: Service[] = [
     title: 'Antistatic Flooring System',
     description: 'Electrostatic discharge protection for sensitive environments. Essential for electronics manufacturing and data centers.',
     icon: Zap,
-    image: '/antistatic-flooring-system.avif',
+    image: '/afs.jpg',
     slug: 'antistatic-flooring-system',
   },
   {
-    title: 'Line Marking / Safety Marker',
-    description: 'Precision line marking for safety and organization in facilities. Color-coded markings for aisles, zones, and hazards.',
+    title: 'Micro Topping',
+    description: 'High-performance micro topping for smooth, durable surfaces. Ideal for refinishing and leveling existing floors.',
     icon: CheckCircle,
-    image: '/line-marking-safety-marker.avif',
-    slug: 'line-marking-safety-marker',
+    image: '/mt.jpg',
+    slug: 'micro-topping',
   },
   {
     title: 'Industrial & Commercial Wall Coating',
     description: 'Protective and aesthetic wall coatings for industrial spaces. Resistant to impacts, chemicals, and easy to clean.',
     icon: Building,
-    image: '/industrial-commercial-wall-coating.avif',
+    image: '/pwc.jpg',
     slug: 'industrial-commercial-wall-coating',
   },
   {
     title: 'Sealant Application Services',
     description: 'Professional sealant application for enhanced durability and protection. Seals joints and prevents water ingress.',
     icon: Sparkles,
-    image: '/sealant-application-services.avif',
+    image: '/sas.jpg',
     slug: 'sealant-application-services',
   },
   {
@@ -105,15 +105,15 @@ const services: Service[] = [
     title: 'Sinage Marking',
     description: 'Custom signage and marking services for clear navigation and safety. Durable and compliant with industry standards.',
     icon: CheckCircle,
-    image: '/sinage-marking.jpg',
+    image: '/sm1.jpg',
     slug: 'sinage-marking',
   },
   {
-    title: 'PU Wallcoating',
-    description: 'High-performance polyurethane wall coatings for durability and aesthetics. Smooth finish with excellent adhesion.',
+    title: 'EPU Flooring System',
+    description: 'High-performance epoxy polyurethane flooring for durability and aesthetics. Smooth finish with excellent adhesion.',
     icon: Paintbrush,
-    image: '/pu-wallcoating.jpg',
-    slug: 'pu-wallcoating',
+    image: '/EPU.jpg',
+    slug: 'epu-flooring-system',
   },
   {
     title: 'PU Dust Proof Staircase Coating',
@@ -147,14 +147,14 @@ const services: Service[] = [
     title: 'Densification Polished Concrete',
     description: 'Densified and polished concrete for a sleek, low-maintenance finish. Eco-friendly and cost-effective.',
     icon: Hammer,
-    image: '/densification-polished-concrete.jpg',
+    image: '/dpc.jpg',
     slug: 'densification-polished-concrete',
   },
   {
     title: 'Cementious Self leveling Underlay',
     description: 'Cementitious self-leveling underlay for even, stable flooring preparation. Fast drying and high strength.',
     icon: Droplets,
-    image: '/Cementious self leveling  underlay.jpg',
+    image: '/csu.jpg',
     slug: 'cementious-self-leveling-underlay',
   },
 ];
@@ -238,13 +238,13 @@ export default function ProductsServices() {
             Excellence in every step.
           </motion.p>
           <motion.button
-            className="bg-gold text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-white transition-all duration-300 flex items-center mx-auto shadow-lg hover:shadow-xl"
+           className="inline-block bg-[#e13403] text-white px-8 py-3 rounded-lg text-lg font-semibold border-2 border-[#e13403] hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl "
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Explore Our Services <ArrowRight className="ml-2" />
+            View All Products
           </motion.button>
         </div>
       </section>
@@ -253,7 +253,7 @@ export default function ProductsServices() {
       <section id="services" className="py-20 bg-beige">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center text-brown mb-16"
+            className="text-4xl md:text-5xl font-bold text-center text-red-600 mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -295,7 +295,7 @@ export default function ProductsServices() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-brown mb-4">
+                  <h3 className="text-xl font-semibold text-black mb-4">
                     {service.title}
                   </h3>
                 </div>

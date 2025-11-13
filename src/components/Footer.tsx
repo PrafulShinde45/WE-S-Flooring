@@ -70,9 +70,9 @@ export default function Footer() {
                 {[
                   { href: '/', label: 'Home' },
                   { href: '/about', label: 'About' },
-                  { href: '#services', label: 'Services' },
-                  { href: '#gallery', label: 'Gallery' },
-                  { href: '#contact', label: 'Contact' },
+                  { href: '/products-services', label: 'Services' },
+                  { href: '/projects', label: 'Gallery' },
+                  { href: '/contact', label: 'Contact' },
                 ].map((link, index) => (
                   <li key={index}>
                     <Link
@@ -145,7 +145,7 @@ export default function Footer() {
                 ].map((social, index) => (
                   <motion.a
                     key={index}
-                    href={social.name === 'WhatsApp' ? 'https://wa.me/919356860035' : '#'}
+                    href={social.name === 'WhatsApp' ? 'https://wa.me/919356860035' : social.name === 'Instagram' ? 'https://www.instagram.com/wesflooring/' : '#'}
                     className="bg-gray-50 rounded-lg p-4 text-center hover:bg-red-50 transition-all duration-300 group"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(225, 52, 3, 0.3)" }}
                     whileTap={{ scale: 0.95 }}
