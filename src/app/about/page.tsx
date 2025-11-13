@@ -99,6 +99,18 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
+                <div className="flex justify-center space-x-2 mt-4">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        currentImageIndex === index ? 'bg-[#e13403]' : 'bg-gray-400'
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="space-y-6">

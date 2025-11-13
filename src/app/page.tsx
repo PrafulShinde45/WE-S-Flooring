@@ -7,7 +7,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import ProductShowcase from '@/components/ProductShowcase';
 import CatalogBanner from '@/components/CatalogBanner';
-
 import Reviews from '@/components/Reviews';
 
 import Footer from '@/components/Footer';
@@ -29,10 +28,7 @@ export default function Home() {
       <ProductShowcase />
       <CatalogBanner />
       <Reviews />
-
-      <div className="flex justify-center py-12 bg-white) {
-        
-      }">
+      <div className="flex justify-center py-12 bg-white" style={{ marginTop: "-120px" }}>
         <div className="bg-white rounded-2xl p-6 w-4/5 max-w-4xl mx-4 shadow-2xl border border-gray-200 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-black mb-3">
             Ready to Transform Your Space?

@@ -95,18 +95,20 @@ export default function Navbar() {
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
-          {/* Logo */}
+          {/* Logo - Left */}
+          <div className="flex-shrink-0">
             <Link
               href="/"
               className={`flex items-center gap-2 text-2xl font-bold transition-colors ${isScrolled ? 'text-black' : 'text-white'
                 } hover:text-[#e13403] relative p-2`}
             >
             <div className={`absolute inset-0 bg-white ${isScrolled ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}></div>
-            <Image src="/logo.png" alt="Logo" width={50} height={50} className="object-contain relative z-10" />
-          </Link>
+            <Image src="/logo.png" alt="Logo" width={60} height={50} className="object-contain relative z-10" />
+            </Link>
+          </div>
 
           {/* Centered Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden md:flex items-center justify-center flex-1 space-x-8 mx-8">
             <Link
               href="/"
               className={`transition-colors px-3 py-2 rounded-md text-base font-medium ${isScrolled ? 'text-black hover:text-[#e13403]' : 'text-white hover:text-[#e13403]'
@@ -152,93 +154,96 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Search Bar */}
-          <div ref={searchRef} className="relative hidden md:block">
-            <form onSubmit={handleSearch} className="flex items-center">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchTerm}
-                  onChange={handleSearchChange}
-                  placeholder="Search flooring products..."
-                  className={`w-64 px-4 py-2 pl-10 pr-12 rounded-2xl text-sm font-medium transition-all duration-300 shadow-lg ${
-                    isScrolled
-                      ? 'bg-white/90 backdrop-blur-md border border-gray-200/50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-gold/50 focus:border-gold/50'
-                      : 'bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/70 focus:ring-2 focus:ring-gold/50 focus:border-gold/50'
-                  }`}
-                />
-                {isSearching ? (
-                  <svg className={`absolute left-3 top-2.5 w-5 h-5 ${isScrolled ? 'text-gray-400' : 'text-white/70'} animate-spin`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                ) : (
-                  <svg className={`absolute left-3 top-2.5 w-5 h-5 ${isScrolled ? 'text-gray-400' : 'text-white/70'} transition-transform duration-200 hover:scale-110`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                )}
-                {searchTerm && (
-                  <button
-                    type="button"
-                    onClick={clearSearch}
-                    className={`absolute right-2 top-2.5 ${isScrolled ? 'text-gray-400 hover:text-gray-600' : 'text-white/70 hover:text-white'}`}
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          {/* Right Side - Search and Mobile Button */}
+          <div className="flex items-center space-x-4 flex-shrink-0 ml-auto">
+            {/* Search Bar */}
+            <div ref={searchRef} className="absolute right-12 top-7 hidden md:block">
+              <form onSubmit={handleSearch} className="flex items-center">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                    placeholder="Search flooring products..."
+                    className={`w-64 px-4 py-2 pl-10 pr-12 rounded-2xl text-sm font-medium transition-all duration-300 shadow-lg ${
+                      isScrolled
+                        ? 'bg-white/90 backdrop-blur-md border border-gray-200/50 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-gold/50 focus:border-gold/50'
+                        : 'bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-white/70 focus:ring-2 focus:ring-gold/50 focus:border-gold/50'
+                    }`}
+                  />
+                  {isSearching ? (
+                    <svg className={`absolute left-3 top-2.5 w-5 h-5 ${isScrolled ? 'text-gray-400' : 'text-white/70'} animate-spin`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                  </button>
-                )}
-              </div>
-            </form>
-
-            {/* Search Results */}
-            {searchResults.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto z-50">
-                {searchResults.map((result, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
-                    onClick={() => {
-                      setSearchTerm(result);
-                      setSearchResults([]);
-                      // Navigate to search result or product page
-                      console.log('Selected:', result);
-                    }}
-                  >
-                    <div className="flex items-center">
-                      <svg className="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  ) : (
+                    <svg className={`absolute left-3 top-2.5 w-5 h-5 ${isScrolled ? 'text-gray-400' : 'text-white/70'} transition-transform duration-200 hover:scale-110`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  )}
+                  {searchTerm && (
+                    <button
+                      type="button"
+                      onClick={clearSearch}
+                      className={`absolute right-2 top-2.5 ${isScrolled ? 'text-gray-400 hover:text-gray-600' : 'text-white/70 hover:text-white'}`}
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
-                      <span className="text-gray-900">{result}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {searchTerm && searchResults.length === 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                <div className="px-4 py-3 text-gray-500 text-center">
-                  No results found for "{searchTerm}"
+                    </button>
+                  )}
                 </div>
-              </div>
-            )}
-          </div>
+              </form>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className={`focus:outline-none ${isScrolled ? 'text-brown' : 'text-white'
-                }`}
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+              {/* Search Results */}
+              {searchResults.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto z-50">
+                  {searchResults.map((result, index) => (
+                    <div
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                      onClick={() => {
+                        setSearchTerm(result);
+                        setSearchResults([]);
+                        // Navigate to search result or product page
+                        console.log('Selected:', result);
+                      }}
+                    >
+                      <div className="flex items-center">
+                        <svg className="w-4 h-4 text-gray-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <span className="text-gray-900">{result}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {searchTerm && searchResults.length === 0 && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <div className="px-4 py-3 text-gray-500 text-center">
+                    No results found for "{searchTerm}"
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={toggleMenu}
+                className={`focus:outline-none ${isScrolled ? 'text-brown' : 'text-white'
+                  }`}
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {isOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -283,13 +288,7 @@ export default function Navbar() {
               >
                 Gallery
               </Link>
-              <Link
-                href="#reviews"
-                className="text-brown hover:text-[#e13403] block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
-              >
-                Reviews
-              </Link>
+              
               <Link
                 href="/contact"
                 className="text-brown hover:text-[#e13403] block px-3 py-2 rounded-md text-base font-medium"
@@ -297,13 +296,7 @@ export default function Navbar() {
               >
                 Contact
               </Link>
-              <a
-                href="tel:+1555123FLOOR"
-                className="bg-gold text-brown block px-3 py-2 rounded-md text-base font-medium hover:bg-[#e13403]"
-                onClick={toggleMenu}
-              >
-                Call Now
-              </a>
+            
             </div>
           </div>
         )}

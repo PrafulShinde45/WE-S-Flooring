@@ -1,0 +1,45 @@
+/* Add your custom styles here for the testimonials section */
+
+.main {
+  /* Add styles for the main container */
+}
+
+.head-p {
+  /* Add styles for the heading part */
+}
+
+.head {
+  /* Add styles for the main heading */
+}
+
+.swiper-slide {
+  /* Add styles for swiper slides */
+}
+
+.testimonials-profile-circle {
+  /* Add styles for profile circle */
+}
+
+.testimonial-avatar {
+  /* Add styles for avatar images */
+}
+
+.review-by {
+  /* Add styles for review by text */
+}
+
+/* Custom styles for testimonials pagination */
+.testimonial-swiper .swiper-pagination {
+  margin-top: 40px;
+  bottom: 0 !important;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  background-color: #e13403;
+  opacity: 0.5;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background-color: #e13403;
+  opacity: 1;
+}

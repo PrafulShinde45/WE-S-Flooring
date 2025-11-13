@@ -33,111 +33,129 @@ interface Service {
   description: string;
   icon: any;
   image: string;
+  slug: string;
 }
 
 // Service data
 const services: Service[] = [
   {
     title: 'Self-Leveling Epoxy Flooring System',
-    description: 'Seamless, self-leveling epoxy for smooth, durable surfaces in industrial and commercial spaces. Ideal for warehouses, factories, and showrooms.',
+    description: 'Seamless, self-leveling epoxy for smooth, durable surfaces in industrial and commercial spaces. Ideal for warehouses, factories, and showrooms. Self-leveling epoxy flooring refers to a special type of epoxy resin, one which, as the name implies, can actually level itself, essentially making your floor self-healing. Epoxy flooring over your current concrete floor, and as the epoxy spreads out, it fills in any cracks or chips in your concrete floor, leaving you with a level surface with no sign of damage or wear.',
     icon: Droplets,
-    image: '/self-leveling-epoxy-flooring-system.avif',
+    image: '/Epoxy Flooring2.jpg',
+    slug: 'self-leveling-epoxy-flooring-system',
   },
   {
     title: 'Decorative Flooring System',
     description: 'Aesthetic and functional decorative flooring solutions for modern interiors. Custom designs for residential and commercial applications.',
     icon: Paintbrush,
     image: '/decorative-flooring-system.avif',
+    slug: 'decorative-flooring-system',
   },
   {
     title: 'Epoxy Resurfacing / Floor Repair Service',
     description: 'Expert epoxy resurfacing and repair to restore damaged flooring. Quick and efficient solutions for cracks, chips, and wear.',
     icon: Hammer,
     image: '/epoxy-resurfacing-floor-repair.avif',
+    slug: 'epoxy-resurfacing-floor-repair',
   },
   {
     title: 'PU Concrete Flooring',
     description: 'Durable polyurethane concrete for high-traffic industrial areas. Provides excellent abrasion resistance and chemical protection.',
     icon: Shield,
-    image: '/pu-concrete-flooring.avif',
+    image: '/pcf1.jpg',
+    slug: 'pu-concrete-flooring',
   },
   {
     title: 'Antistatic Flooring System',
     description: 'Electrostatic discharge protection for sensitive environments. Essential for electronics manufacturing and data centers.',
     icon: Zap,
     image: '/antistatic-flooring-system.avif',
+    slug: 'antistatic-flooring-system',
   },
   {
     title: 'Line Marking / Safety Marker',
     description: 'Precision line marking for safety and organization in facilities. Color-coded markings for aisles, zones, and hazards.',
     icon: CheckCircle,
     image: '/line-marking-safety-marker.avif',
+    slug: 'line-marking-safety-marker',
   },
   {
     title: 'Industrial & Commercial Wall Coating',
     description: 'Protective and aesthetic wall coatings for industrial spaces. Resistant to impacts, chemicals, and easy to clean.',
     icon: Building,
     image: '/industrial-commercial-wall-coating.avif',
+    slug: 'industrial-commercial-wall-coating',
   },
   {
     title: 'Sealant Application Services',
     description: 'Professional sealant application for enhanced durability and protection. Seals joints and prevents water ingress.',
     icon: Sparkles,
     image: '/sealant-application-services.avif',
+    slug: 'sealant-application-services',
   },
   {
     title: 'Waterproofing',
     description: 'Advanced waterproofing solutions to protect floors from moisture and water damage. Ideal for wet areas and basements.',
     icon: Droplets,
     image: '/waterproofing.jpg',
+    slug: 'waterproofing',
   },
   {
     title: 'Sinage Marking',
     description: 'Custom signage and marking services for clear navigation and safety. Durable and compliant with industry standards.',
     icon: CheckCircle,
     image: '/sinage-marking.jpg',
+    slug: 'sinage-marking',
   },
   {
     title: 'PU Wallcoating',
     description: 'High-performance polyurethane wall coatings for durability and aesthetics. Smooth finish with excellent adhesion.',
     icon: Paintbrush,
     image: '/pu-wallcoating.jpg',
+    slug: 'pu-wallcoating',
   },
   {
     title: 'PU Dust Proof Staircase Coating',
     description: 'Dust-proof polyurethane coatings for staircases to ensure safety and cleanliness. Non-slip and easy maintenance.',
     icon: Shield,
-    image: '/pu-dust-proof-staircase-coating.jpg',
+    image: '/staircasePU.avif',
+    slug: 'pu-dust-proof-staircase-coating',
   },
   {
     title: 'PU Car Park Coating',
     description: 'Robust polyurethane coatings for car parks to withstand heavy traffic. UV resistant and fast curing.',
     icon: Car,
-    image: '/pu-car-park-coating.jpg',
+    image: '/pcp.jpg',
+    slug: 'pu-car-park-coating',
   },
   {
     title: 'PU Waterproof Coating',
     description: 'Waterproof polyurethane coatings for superior moisture resistance. Flexible and long-lasting protection.',
     icon: Droplets,
-    image: '/pu-waterproof-coating.jpg',
+    image: '/puc2.jpg',
+    slug: 'pu-waterproof-coating',
   },
   {
     title: 'Food Grade Epoxy Flooring',
     description: 'Hygienic, food-safe epoxy flooring for kitchens and food processing areas. NSF certified and seamless.',
     icon: Sparkles,
-    image: '/food-grade-epoxy-flooring.jpg',
+    image: '/fef.jpg',
+    slug: 'food-grade-epoxy-flooring',
   },
   {
     title: 'Densification Polished Concrete',
     description: 'Densified and polished concrete for a sleek, low-maintenance finish. Eco-friendly and cost-effective.',
     icon: Hammer,
     image: '/densification-polished-concrete.jpg',
+    slug: 'densification-polished-concrete',
   },
   {
     title: 'Cementious Self leveling Underlay',
     description: 'Cementitious self-leveling underlay for even, stable flooring preparation. Fast drying and high strength.',
     icon: Droplets,
     image: '/Cementious self leveling  underlay.jpg',
+    slug: 'cementious-self-leveling-underlay',
   },
 ];
 
@@ -265,7 +283,7 @@ export default function ProductsServices() {
                   visible: { opacity: 1, y: 0 },
                 }}
                 whileHover={{ y: -10, scale: 1.05 }}
-                onClick={() => openModal(service)}
+                onClick={() => window.location.href = `/products/${service.slug}`}
               >
                 <div className="relative h-80 w-full overflow-hidden">
                   <Image
