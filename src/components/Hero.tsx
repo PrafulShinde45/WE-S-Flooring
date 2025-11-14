@@ -31,7 +31,7 @@ interface HeroProps {
 
 export default function Hero({
   title = "Transform Your Space from the Ground Up.",
-  subtitle = "Premium craftsmanship meets timeless style. Discover our collection of hardwood, vinyl, laminate, and marble flooring solutions.",
+  subtitle = "Premium craftsmanship meets timeless style. Explore our range of protective flooring coatings and surface finishes.",
   buttonText = "Get a Free Quote",
   buttonHref = "#contact",
   backgroundImage = "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
@@ -41,9 +41,9 @@ export default function Hero({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "/IMG-20251111-WA0058[1].jpg",
+    "/puc2.jpg",
     "/WhatsApp Image 2025-11-11 at 18.35.13_e98ca34b.jpg",
-    "/Hero Home.jpg"
+    "/IMG-20251111-WA0058[1].jpg"
   ];
 
   useEffect(() => {

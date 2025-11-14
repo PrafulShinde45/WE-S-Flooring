@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,10 +13,29 @@ function SimpleNavbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [showProductsDropdown, setShowProductsDropdown] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const productsRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setShowProductsDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setShowProductsDropdown(false);
+    }, 2000); // 2 seconds delay
+    setDropdownTimeout(timeout);
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +75,22 @@ function SimpleNavbar() {
     router.push(`/products/${product.slug}`);
   };
 
+  // Close search and products dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setSuggestions([]);
+        setShowSuggestions(false);
+      }
+      if (productsRef.current && !productsRef.current.contains(event.target as Node)) {
+        setShowProductsDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,9 +110,47 @@ function SimpleNavbar() {
             <Link href="/about" className="text-black text-base font-medium">
               About
             </Link>
-            <Link href="/products-services" className="text-black text-base font-medium">
-              Products
-            </Link>
+            <div ref={productsRef} className="relative">
+              <button
+                onClick={() => router.push('/products-services')}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="text-black text-base font-medium flex items-center gap-1 hover:cursor-pointer"
+              >
+                Products
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Products Dropdown */}
+              {showProductsDropdown && (
+                <div
+                  className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-2 w-96 z-50 max-h-96 overflow-y-auto"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {products.map((product, index) => (
+                    <Link
+                      key={index}
+                      href={`/products/${product.slug}`}
+                      className="block px-4 py-2 text-gray-900 hover:bg-gray-100 hover:text-[#e13403] transition-colors border-b border-gray-50 last:border-b-0"
+                    >
+                      <div className="font-medium text-sm">{product.title}</div>
+                      <div className="text-xs text-gray-600 truncate">{product.category}</div>
+                    </Link>
+                  ))}
+                  <div className="border-t border-gray-100 mt-2 pt-2">
+                    <Link
+                      href="/products-services"
+                      className="block px-4 py-2 text-[#e13403] hover:bg-gray-100 transition-colors font-medium text-sm"
+                    >
+                      View All Products →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link href="/industries" className="text-black text-base font-medium">
               Industries
             </Link>
@@ -259,7 +332,7 @@ const products = [
     title: 'Decorative Flooring System',
     category: 'Decorative Flooring',
     description: `A decorative epoxy flooring system enhances the appearance of standard epoxy by adding creative visual effects. While regular epoxy already offers strength, gloss, and durability, decorative epoxy brings a unique touch that helps the flooring stand out. One of the most popular decorative methods is the chip or flake flooring system, where acrylic flakes are mixed with epoxy and then sealed with a clear top coat. This process, when done professionally, results in a beautiful, sparkling finish with customizable patterns that elevate the overall look of the floor.`,
-    images: ['/dfs.jpg', '/dfs1.jpg', '/dfs2.jpg'],
+    images: ['/dfs3.jpg', '/dfs1.jpg', '/dfs2.jpg','/decof.jpg'],
     features: [
       'Custom design options',
       'High aesthetic appeal',
@@ -303,7 +376,7 @@ const products = [
     title: 'Epoxy Resurfacing / Floor Repair Service',
     category: 'Floor Repair',
     description: `Epoxy resurfacing is an effective and affordable solution for restoring damaged or uneven concrete floors. Over time, concrete surfaces may develop cracks, holes, or wear that affect both safety and appearance. The resurfacing process involves removing any existing coating, preparing the floor, and filling imperfections before applying a durable epoxy layer to seal the surface. A final clear top coat enhances strength and shine, leaving the floor looking newer, smoother, and safer.`,
-    images: ['/ers.jpg', '/ers1.jpg'],
+    images: ['/er1.jpg', '/er.jpg'],
     features: [
       'Crack repair',
       'Chip restoration',
@@ -342,7 +415,7 @@ const products = [
     title: 'PU Concrete Flooring',
     category: 'Polyurethane Flooring',
     description: `PU Concrete is a unique flooring system created by combining urethane and cement to form a thick, self-leveling surface that withstands thermal shocks, chemical exposure, heavy impacts, and continuous vehicular traffic. Known for decades of reliable performance in demanding industrial settings, PU Concrete is built to endure both physical and chemical abuses. It is seamless, hygienic, odorless, and resistant to bacterial growth, making it ideal for food and beverage industries where strict cleanliness standards are required. PU Concrete floors can be steam-cleaned to achieve sanitation levels comparable to stainless steel.`,
-    images: ['/pcf1.jpg', '/pcf.jpg', '/pcf2.jpg', '/pcf3.jpg'],
+    images: ['/PUCN.jpg', '/pcf.jpg', '/pcf2.jpg', '/pcf3.jpg'],
     features: [
       'High abrasion resistance',
       'Chemical protection',
@@ -475,42 +548,12 @@ const products = [
     category: 'Wall Coatings',
     description: `Industrial and commercial wall coatings are specialized protective systems designed to enhance the durability and appearance of interior and exterior walls in demanding environments. These coatings provide superior resistance to impacts, chemicals, moisture, and abrasion while maintaining an attractive finish. Available in various formulations including epoxy, polyurethane, and acrylic systems, they offer excellent adhesion to different substrates and can be customized for specific performance requirements. Wall coatings are essential for maintaining hygiene standards in food processing facilities, withstanding harsh chemicals in manufacturing plants, and providing long-lasting protection in commercial spaces.`,
     images: ['/Pwc.jpg', '/wall coating_edited.avif'],
-    features: [
-      'Impact resistant',
-      'Chemical protection',
-      'Easy to clean',
-      'Durable surface',
-      'Fast curing time',
-      'Low odor during application',
-      'Excellent adhesion to walls',
-      'UV stable colors',
-      'Customizable thickness',
-      'Anti-slip options available',
-      'Environmentally friendly',
-      'Long-term cost savings',
-      'Professional installation',
-      'Warranty included',
-      'Seamless finish'
-    ],
-    specifications: {
-      'Thickness': '1-3mm',
-      'Drying Time': '12-24 hours',
-      'Coverage': '1kg per 2-3 sqm',
-      'Colors': 'Multiple options',
-      'Application': 'Roller/Spray',
-      'Warranty': '3 years'
-    },
+
     benefits: [
       { icon: Shield, title: 'Protection', desc: 'Resistant to impacts and chemicals' },
       { icon: Sparkles, title: 'Aesthetics', desc: 'Modern, clean appearance' },
       { icon: Droplets, title: 'Hygiene', desc: 'Easy to clean and sanitize' },
       { icon: Zap, title: 'Performance', desc: 'High durability' }
-    ],
-    applications: [
-      { name: 'Factories', icon: Hammer },
-      { name: 'Warehouses', icon: Building },
-      { name: 'Commercial Spaces', icon: Users },
-      { name: 'Food Processing Areas', icon: Building }
     ]
   },
   {
@@ -1061,18 +1104,7 @@ export default function ProductPage() {
                 </p>
               </div>
 
-              {/* Key Highlights */}
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-black">Key Highlights</h3>
-                <ul className="space-y-2">
-                  {product.features.slice(0, 4).map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-[#e13403] mr-3 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
 
               {/* CTA Button */}
               <div className="pt-6">

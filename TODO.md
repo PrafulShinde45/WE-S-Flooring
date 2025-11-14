@@ -1,4 +1,2 @@
-# TODO: Remove Testimonial Section
-
-- [x] Remove the import statement for Reviews component from src/app/page.tsx
-- [x] Remove the <Reviews /> JSX element from the component tree in src/app/page.tsx
+- [x] Change image for Epoxy Resurfacing / Floor Repair Service in src/app/products-services/page.tsx from '/er.jpg' to '/er1.jpg'
+- [x] Modify projects gallery modal to show only full-width image without title and description

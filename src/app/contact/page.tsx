@@ -284,7 +284,7 @@ function ContactForm() {
                     {
                       Icon: MapPin,
                       title: 'Location',
-                      text: 'WE S FLOORING PVT LTD.,Rimzim Bungalow, Near Unique Classes, Old Sangavi, Pune - 411027',
+                      text: 'WE S FLOORING PVT LTD., S.NO. 7/2/59, ABHINAV NAGAR, MULA NAGAR, OLD SANGAVI, Pune, Maharashtra, 411027',
                       href: 'https://www.google.com/maps/search/WE+S+FLOORING+PVT+LTD.+Vishal+more+Rimzim+Bungalow,+Near+Unique+Classes,+Old+Sangavi,+Pune+-+411027/@18.5374829,73.7438976,12z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTExMC4wIKXMDSoASAFQAw%3D%3D',
                     },
                   ].map(({ Icon, title, text, href }, i) => (

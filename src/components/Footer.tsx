@@ -106,9 +106,7 @@ export default function Footer() {
                   </svg>
                   <div className="text-gray-700">
                     <p>WE'S FLOORING PVT LTD.</p>
-                    <p>Rimzim Bungalow,</p>
-                    <p>Near Unique Classes, Old Sangavi, Pune - 411027</p>
-                 
+                    <p>S.NO. 7/2/59, ABHINAV NAGAR, MULA NAGAR, OLD SANGAVI, Pune, Maharashtra, 411027</p>
                   </div>
                 </div>
                 <div className="flex items-center">

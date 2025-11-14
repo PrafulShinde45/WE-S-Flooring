@@ -15,20 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "We's Flooring & Interior Design",
-  description: "Transform your space with premium craftsmanship and style. Specializing in hardwood, vinyl, laminate, and marble flooring.",
-  keywords: "flooring, interior design, hardwood, vinyl, laminate, marble, luxury flooring",
-  authors: [{ name: "We's Flooring & Interior Design" }],
-  creator: "We's Flooring & Interior Design",
-  publisher: "We's Flooring & Interior Design",
+  title: "WE'S Flooring PVT LTD",
+  description: "Professional industrial flooring solutions including epoxy flooring, PU coatings, waterproofing, and specialized surface treatments for commercial and industrial applications.",
+  keywords: "industrial flooring, epoxy flooring, PU flooring, waterproofing, floor coatings, commercial flooring, industrial coatings",
+  authors: [{ name: "WE'S Flooring PVT LTD" }],
+  creator: "WE'S Flooring PVT LTD",
+  publisher: "WE'S Flooring PVT LTD",
+  icons: [{ rel: 'icon', url: '/logo.png' }],
   openGraph: {
-    title: "We's Flooring & Interior Design",
-    description: "Transform your space with premium craftsmanship and style.",
+    title: "WE'S Flooring PVT LTD",
+    description: "Professional industrial flooring solutions including epoxy flooring, PU coatings, waterproofing, and specialized surface treatments for commercial and industrial applications.",
     url: "https://wesflooring.com",
-    siteName: "We's Flooring & Interior Design",
+    siteName: "WE'S Flooring PVT LTD",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7", // Placeholder OG image
+        url: "/logo.png",
         width: 1200,
         height: 630,
       },
@@ -38,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "We's Flooring & Interior Design",
-    description: "Transform your space with premium craftsmanship and style.",
-    images: ["https://images.unsplash.com/photo-1586023492125-27b2c045efd7"],
+    title: "WE'S Flooring PVT LTD",
+    description: "Professional industrial flooring solutions including epoxy flooring, PU coatings, waterproofing, and specialized surface treatments for commercial and industrial applications.",
+    images: ["/logo.png"],
   },
 };
 
