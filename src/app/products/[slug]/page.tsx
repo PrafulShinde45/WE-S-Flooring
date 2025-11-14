@@ -11,7 +11,7 @@ import { Search } from 'lucide-react';
 function SimpleNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [suggestions, setSuggestions] = useState<Service[]>([]);
+  const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const router = useRouter();
 
@@ -50,7 +50,7 @@ function SimpleNavbar() {
     }
   };
 
-  const handleSuggestionClick = (product: Service) => {
+  const handleSuggestionClick = (product: any) => {
     setSearchQuery(product.title);
     setShowSuggestions(false);
     router.push(`/products/${product.slug}`);
