@@ -51,7 +51,7 @@ const services: Service[] = [
     title: 'Self-Leveling Epoxy Flooring System',
     description: 'Seamless, self-leveling epoxy for smooth, durable surfaces in industrial and commercial spaces. Ideal for warehouses, factories, and showrooms. Self-leveling epoxy flooring refers to a special type of epoxy resin, one which, as the name implies, can actually level itself, essentially making your floor self-healing. Epoxy flooring over your current concrete floor, and as the epoxy spreads out, it fills in any cracks or chips in your concrete floor, leaving you with a level surface with no sign of damage or wear.',
     icon: Droplets,
-    image: '/Epoxy Flooring2.jpg',
+    image: '/Epoxy%20flooring2.jpg',
     slug: 'self-leveling-epoxy-flooring-system',
   },
   {
@@ -93,7 +93,7 @@ const services: Service[] = [
     title: 'Industrial & Commercial Wall Coating',
     description: 'Protective and aesthetic wall coatings for industrial spaces. Resistant to impacts, chemicals, and easy to clean.',
     icon: Building,
-    image: '/pwc.jpg',
+    image: '/Pwc.jpg',
     slug: 'industrial-commercial-wall-coating',
   },
   {
@@ -107,7 +107,7 @@ const services: Service[] = [
     title: 'Waterproofing',
     description: 'Advanced waterproofing solutions to protect floors from moisture and water damage. Ideal for wet areas and basements.',
     icon: Droplets,
-    image: '/waterproofing.jpg',
+    image: '/Waterproofing.jpg',
     slug: 'waterproofing',
   },
   {
@@ -156,7 +156,7 @@ const services: Service[] = [
     title: 'Densification Polished Concrete',
     description: 'Densified and polished concrete for a sleek, low-maintenance finish. Eco-friendly and cost-effective.',
     icon: Hammer,
-    image: '/dpc.jpg',
+    image: '/Dpc.jpg',
     slug: 'densification-polished-concrete',
   },
   {
