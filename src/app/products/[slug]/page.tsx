@@ -3,7 +3,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
@@ -11,15 +11,49 @@ import { Search } from 'lucide-react';
 function SimpleNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [suggestions, setSuggestions] = useState<Service[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    if (query.trim()) {
+      const filtered = products.filter(product =>
+        product.title.toLowerCase().includes(query.toLowerCase()) ||
+        product.description.toLowerCase().includes(query.toLowerCase())
+      ).slice(0, 5); // Limit to 5 suggestions
+      setSuggestions(filtered);
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle search functionality here
-    console.log('Searching for:', searchQuery);
+    setShowSuggestions(false);
+    if (searchQuery.trim()) {
+      const exactMatch = products.find(product =>
+        product.title.toLowerCase() === searchQuery.toLowerCase().trim()
+      );
+      if (exactMatch) {
+        router.push(`/products/${exactMatch.slug}`);
+      } else {
+        router.push(`/products-services?search=${encodeURIComponent(searchQuery.trim())}`);
+      }
+    }
+  };
+
+  const handleSuggestionClick = (product: Service) => {
+    setSearchQuery(product.title);
+    setShowSuggestions(false);
+    router.push(`/products/${product.slug}`);
   };
 
   return (
@@ -63,7 +97,7 @@ function SimpleNavbar() {
                   type="text"
                   placeholder="Search products..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleSearchChange}
                   className="w-64 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#e13403] focus:border-transparent"
                 />
                 <button
@@ -72,6 +106,21 @@ function SimpleNavbar() {
                 >
                   <Search className="w-5 h-5" />
                 </button>
+                {/* Suggestions Dropdown */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 rounded-b-lg shadow-lg z-50 max-h-60 overflow-y-auto">
+                    {suggestions.map((product, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSuggestionClick(product)}
+                        className="w-full text-left px-4 py-2 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none border-b border-gray-100 last:border-b-0"
+                      >
+                        <div className="font-medium text-gray-900">{product.title}</div>
+                        <div className="text-sm text-gray-600 truncate">{product.description.slice(0, 80)}...</div>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </form>
           </div>
@@ -908,6 +957,7 @@ const products = [
 
 export default function ProductPage() {
   const params = useParams();
+  const router = useRouter();
   const slug = params.slug as string;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -1027,7 +1077,7 @@ export default function ProductPage() {
               {/* CTA Button */}
               <div className="pt-6">
                 <a
-                  href="/contact"
+                  href={`/contact?subject=${encodeURIComponent(product.title)}`}
                   className="inline-block bg-[#e13403] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#d12d02] transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Enquire Now
@@ -1064,7 +1114,43 @@ export default function ProductPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-black mb-16">
             Project Gallery
           </h2>
-          <div className="grid grid-cols-3 gap-6 h-[500px] max-w-6xl mx-auto">
+
+          {/* Mobile View - Only 2 images */}
+          <div className="md:hidden grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+            <div className="relative group overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] h-64">
+              <Image
+                src={product.images[0]}
+                alt={`${product.title} - Image 1`}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-4 border border-white/20">
+                  <p className="text-xl font-bold mb-1">{product.title}</p>
+                  <p className="text-sm opacity-90">Professional Installation</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative group overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] h-64">
+              <Image
+                src={product.images[1] || product.images[0]}
+                alt={`${product.title} - Image 2`}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out">
+                <div className="backdrop-blur-sm bg-white/10 rounded-2xl p-4 border border-white/20">
+                  <p className="text-xl font-bold mb-1">{product.title}</p>
+                  <p className="text-sm opacity-90">Professional Installation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop View - Full gallery */}
+          <div className="hidden md:grid grid-cols-3 gap-6 h-[500px] max-w-6xl mx-auto">
             {/* Left Image - Large vertical (50% height) */}
             <div className="relative group overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:scale-[1.03] col-span-1 row-span-2">
               <Image

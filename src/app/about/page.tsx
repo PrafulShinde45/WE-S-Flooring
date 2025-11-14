@@ -133,30 +133,30 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.div
-                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer"
+                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer min-w-0 flex-shrink-0"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 69, 19, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Calendar className="w-5 h-5 text-[#e13403]" />
-                <span className="text-black font-semibold">Since 2020</span>
+                <Calendar className="w-5 h-5 text-[#e13403] flex-shrink-0" />
+                <span className="text-black font-semibold text-sm sm:text-base whitespace-nowrap">Since 2020</span>
               </motion.div>
               <motion.div
-                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer"
+                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer min-w-0 flex-shrink-0"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 69, 19, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <CheckCircle className="w-5 h-5 text-[#e13403]" />
-                <span className="text-black font-semibold">Multiple Projects Completed</span>
+                <CheckCircle className="w-5 h-5 text-[#e13403] flex-shrink-0" />
+                <span className="text-black font-semibold text-sm sm:text-base whitespace-nowrap">Multiple Projects Completed</span>
               </motion.div>
               <motion.div
-                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer"
+                className="glass px-4 py-2 rounded-full flex items-center gap-2 cursor-pointer min-w-0 flex-shrink-0"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 69, 19, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Star className="w-5 h-5 text-[#e13403]" />
-                <span className="text-black font-semibold">Premium Materials Only</span>
+                <Star className="w-5 h-5 text-[#e13403] flex-shrink-0" />
+                <span className="text-black font-semibold text-sm sm:text-base whitespace-nowrap">Premium Materials Only</span>
               </motion.div>
             </div>
           </motion.div>

@@ -6,30 +6,37 @@ import Link from 'next/link';
 const projects = [
   {
     name: "EPU Flooring",
+    slug: "epu-flooring-system",
     img: "/EPU.jpg"
   },
   {
     name: "Parking Flooring",
+    slug: "pu-car-park-coating",
     img: "/CAR PARK 3.avif"
   },
   {
     name: "Wall Coating",
+    slug: "industrial-commercial-wall-coating",
     img: "/wall coating_edited.avif"
   },
   {
-    name: " Chemical Flooring",
-    img: "/98ffb219-930d-4ca9-9a8c-914e59590234_JPG.avif"
+    name: " Concrete Flooring",
+    slug: "pu-concrete-flooring",
+    img: "/pcf2.jpg"
   },
   {
     name: " Epoxy Flooring ",
+    slug: "self-leveling-epoxy-flooring-system",
     img: "/sunteck.avif"
   },
   {
     name: "floor polishing",
+    slug: "densification-polished-concrete",
     img: "/floor polishing.avif"
   },
   {
     name: "PU Roller Coating",
+    slug: "pu-dust-proof-staircase-coating",
     img: "/staircasePU.avif"
   },
 ];
@@ -37,9 +44,13 @@ const projects = [
 export default function ProductShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsToShow, setItemsToShow] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const updateItemsToShow = () => {
+      const mobile = window.innerWidth < 640;
+      setIsMobile(mobile);
+
       if (window.innerWidth >= 1280) {
         setItemsToShow(4);
       } else if (window.innerWidth >= 1024) {
@@ -63,6 +74,19 @@ export default function ProductShowcase() {
       return Math.min(prev, maxIndex);
     });
   }, [itemsToShow]);
+
+  // Auto-slide for mobile only
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex >= projects.length - itemsToShow ? 0 : prevIndex + 1
+        );
+      }, 3000); // Auto-slide every 3 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, itemsToShow]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -89,16 +113,18 @@ export default function ProductShowcase() {
 
         {/* Carousel Container */}
         <div className="relative flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:mr-4 sm:relative sm:-top-7"
-            aria-label="Previous"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+          {/* Navigation Arrows - Hidden on mobile */}
+          {!isMobile && (
+            <button
+              onClick={prevSlide}
+              className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:mr-4 sm:relative sm:-top-7"
+              aria-label="Previous"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
 
           {/* Carousel Items */}
           <div className="w-full overflow-hidden flex-1 max-w-5xl">
@@ -113,7 +139,7 @@ export default function ProductShowcase() {
                   style={{ width: `${100 / itemsToShow}%` }}
                 >
                   <Link
-                    href={`/products-services?category=${project.name.toLowerCase()}`}
+                    href={`/products/${project.slug}`}
                     className="block group"
                   >
                     <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
@@ -146,15 +172,18 @@ export default function ProductShowcase() {
             </div>
           </div>
 
-          <button
-            onClick={nextSlide}
-            className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:ml-4 sm:relative sm:-top-7"
-            aria-label="Next"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {/* Navigation Arrows - Hidden on mobile */}
+          {!isMobile && (
+            <button
+              onClick={nextSlide}
+              className="bg-black text-white rounded-full p-3 shadow-lg hover:bg-red-700 transition-all duration-300 flex-shrink-0 sm:ml-4 sm:relative sm:-top-7"
+              aria-label="Next"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </section>

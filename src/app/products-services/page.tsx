@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -192,7 +193,24 @@ const offerings = {
 export default function ProductsServices() {
   const [activeTab, setActiveTab] = useState('Installations');
   const [selectedProduct, setSelectedProduct] = useState<Service | null>(null);
+  const [filteredServices, setFilteredServices] = useState<Service[]>(services);
   const y = useParallax(0.5);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // Handle search from URL params
+  useEffect(() => {
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      const filtered = services.filter(service =>
+        service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredServices(filtered);
+    } else {
+      setFilteredServices(services);
+    }
+  }, [searchParams]);
 
   const openModal = (product: Service) => {
     setSelectedProduct(product);
@@ -274,7 +292,7 @@ export default function ProductsServices() {
               },
             }}
           >
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <motion.div
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group border border-beige/50 cursor-pointer"

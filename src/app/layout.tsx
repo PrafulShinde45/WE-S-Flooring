@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -59,6 +60,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${inter.variable} antialiased`}
       >
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );
