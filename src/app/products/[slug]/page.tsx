@@ -474,7 +474,7 @@ const products = [
     title: 'Industrial & Commercial Wall Coating',
     category: 'Wall Coatings',
     description: `Industrial and commercial wall coatings are specialized protective systems designed to enhance the durability and appearance of interior and exterior walls in demanding environments. These coatings provide superior resistance to impacts, chemicals, moisture, and abrasion while maintaining an attractive finish. Available in various formulations including epoxy, polyurethane, and acrylic systems, they offer excellent adhesion to different substrates and can be customized for specific performance requirements. Wall coatings are essential for maintaining hygiene standards in food processing facilities, withstanding harsh chemicals in manufacturing plants, and providing long-lasting protection in commercial spaces.`,
-    images: ['/pwc.jpg'],
+    images: ['/Pwc.jpg', '/wall coating_edited.avif'],
     features: [
       'Impact resistant',
       'Chemical protection',
@@ -870,7 +870,7 @@ const products = [
     title: 'Densification Polished Concrete',
     category: 'Polished Concrete',
     description: `Densification Polished Concrete transforms existing concrete surfaces through a specialized process that hardens and polishes the material to create a durable, attractive finish. The densification process involves applying chemical hardeners that penetrate the concrete surface, increasing its density and resistance to wear. This is followed by multiple grinding and polishing steps that achieve a high-gloss, reflective surface. The result is a low-maintenance flooring solution that maintains its appearance with minimal upkeep while providing excellent durability for commercial and industrial applications.`,
-    images: ['/dpc.jpg', '/DPC2.jpg'],
+    images: ['/Dpc.jpg', '/DPC2.jpg'],
     features: [
       'Sleek polished finish',
       'Low-maintenance surface',
