@@ -2,17 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ['image/webp', 'image/avif'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
+    unoptimized: true,
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
+  // Optional: useful if you deploy to subfolder (like /vedant/)
+  trailingSlash: true,
 };
 
 export default nextConfig;

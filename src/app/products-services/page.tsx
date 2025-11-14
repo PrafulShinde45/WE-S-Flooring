@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
@@ -28,6 +28,14 @@ const useParallax = (value: number) => {
   const { scrollY } = useScroll();
   return useTransform(scrollY, [0, 1], [0, -value]);
 };
+
+export default function ProductsServices() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsServicesContent />
+    </Suspense>
+  );
+}
 
 interface Service {
   title: string;
@@ -190,7 +198,7 @@ const offerings = {
   Maintenance: ['Densification Polished Concrete'],
 };
 
-export default function ProductsServices() {
+function ProductsServicesContent() {
   const [activeTab, setActiveTab] = useState('Installations');
   const [selectedProduct, setSelectedProduct] = useState<Service | null>(null);
   const [filteredServices, setFilteredServices] = useState<Service[]>(services);

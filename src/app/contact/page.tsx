@@ -4,11 +4,10 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-
 
 import {
   Mail,
@@ -32,7 +31,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function ContactPage() {
+function ContactForm() {
   const searchParams = useSearchParams();
   const [subject, setSubject] = useState(searchParams.get('subject') || '');
   const [name, setName] = useState('');
@@ -331,4 +330,10 @@ export default function ContactPage() {
   );
 }
 
-
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactForm />
+    </Suspense>
+  );
+}
